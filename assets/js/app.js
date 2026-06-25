@@ -602,6 +602,11 @@
       termPrint('<span class="f-warn">' + s.clue + "</span>", "");
       termPrint('<span class="f-ok">↑ ↑ ↓ ↓ ← → ← → B A</span>', "");
     }
+    else if (cmd === "gto" || cmd === "onizuka" || cmd === "eikichi") {
+      const t = GTO_TXT[lang] || GTO_TXT.en;
+      termPrint('<span class="f-ok">🏍️😎 ' + t.title + "</span> — " + t.quote, "");
+      showGtoCard();
+    }
     else if (cmd === "open" || cmd === "cat") {
       const n = resolveFile(args[0]);
       if (!n) termPrint(cmd + ": " + esc(args[0] || "") + " ✗", "err");
@@ -970,6 +975,36 @@
       if (k === KONAMI[idx]) { idx++; if (idx === KONAMI.length) { idx = 0; unlockTreasure(); } }
       else { idx = (k === KONAMI[0]) ? 1 : 0; }
     });
+  }
+
+  /* ---------- Easter egg GTO (Great Teacher Onizuka) ---------- */
+  const GTO_TXT = {
+    es: { title: "GREAT TEACHER ONIZUKA", sub: "Eikichi Onizuka · 22 años · ex-motero", quote: "«Un buen profesor jamás abandona a un alumno… ni se rinde nunca.»", watch: "▶ Ver el opening", close: "Cerrar" },
+    en: { title: "GREAT TEACHER ONIZUKA", sub: "Eikichi Onizuka · age 22 · ex-biker", quote: "“A good teacher never gives up on a student… and never gives up, period.”", watch: "▶ Watch the opening", close: "Close" },
+    de: { title: "GREAT TEACHER ONIZUKA", sub: "Eikichi Onizuka · 22 Jahre · Ex-Biker", quote: "„Ein guter Lehrer gibt einen Schüler niemals auf … und gibt niemals auf.“", watch: "▶ Opening ansehen", close: "Schließen" },
+    it: { title: "GREAT TEACHER ONIZUKA", sub: "Eikichi Onizuka · 22 anni · ex-motociclista", quote: "«Un bravo insegnante non abbandona mai un alunno… e non si arrende mai.»", watch: "▶ Guarda la sigla", close: "Chiudi" },
+    fr: { title: "GREAT TEACHER ONIZUKA", sub: "Eikichi Onizuka · 22 ans · ex-motard", quote: "« Un bon prof n'abandonne jamais un élève… et n'abandonne jamais. »", watch: "▶ Voir l'opening", close: "Fermer" },
+  };
+  function showGtoCard() {
+    const t = GTO_TXT[lang] || GTO_TXT.en;
+    const ov = document.createElement("div"); ov.className = "gto-overlay";
+    ov.innerHTML =
+      '<div class="gto-card">' +
+      '<button class="gto-close" aria-label="x">✕</button>' +
+      '<div class="gto-emoji">🏍️😎🔥</div>' +
+      '<div class="gto-title">' + t.title + "</div>" +
+      '<div class="gto-sub">' + t.sub + "</div>" +
+      '<div class="gto-quote">' + t.quote + "</div>" +
+      '<div class="gto-by">— Onizuka 🏍️</div>' +
+      '<div class="gto-actions">' +
+      '<a class="gto-btn" href="https://www.youtube.com/results?search_query=GTO+great+teacher+onizuka+opening+driver%27s+high" target="_blank" rel="noopener">' + t.watch + "</a>" +
+      '<button class="gto-btn ghost gto-dismiss">' + t.close + "</button>" +
+      "</div></div>";
+    document.body.appendChild(ov);
+    const remove = () => { if (ov.parentNode) ov.parentNode.removeChild(ov); document.removeEventListener("keydown", onEsc); };
+    function onEsc(e) { if (e.key === "Escape") remove(); }
+    ov.addEventListener("click", (e) => { if (e.target === ov || e.target.classList.contains("gto-close") || e.target.classList.contains("gto-dismiss")) remove(); });
+    document.addEventListener("keydown", onEsc);
   }
 
   /* ---------- Init ---------- */

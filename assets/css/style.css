@@ -594,3 +594,16 @@ html[data-theme="cyberpunk"] {
 .treasure-toast.fade { opacity: 0; }
 .treasure-toast b { color: var(--accent); }
 .treasure-toast small { color: var(--gutter-fg); }
+
+/* ===== Easter egg GTO (Onizuka) ===== */
+.gto-overlay { position: fixed; inset: 0; z-index: 1700; background: rgba(0,0,0,.78); display: grid; place-items: center; padding: 20px; }
+.gto-card { width: min(520px, 94vw); background: var(--sidebar); border: 2px solid var(--accent); border-radius: 14px; box-shadow: 0 0 50px color-mix(in srgb, var(--accent) 45%, transparent); padding: 24px 24px 22px; text-align: center; position: relative; }
+.gto-emoji { font-size: 58px; line-height: 1; filter: drop-shadow(0 0 14px color-mix(in srgb, var(--accent) 50%, transparent)); }
+.gto-title { font-family: var(--font-mono); font-weight: 800; letter-spacing: 2px; color: var(--accent); margin: 10px 0 2px; font-size: 19px; }
+.gto-sub { color: var(--link); font-size: 13px; margin-bottom: 12px; }
+.gto-quote { color: var(--editor-fg); font-size: 15px; line-height: 1.5; font-style: italic; margin: 8px 0 6px; }
+.gto-by { color: var(--gutter-fg); font-size: 12px; margin-bottom: 18px; }
+.gto-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.gto-btn { font: inherit; font-size: 13.5px; padding: 9px 18px; border-radius: 8px; cursor: pointer; border: 0; background: var(--accent); color: var(--on-accent); font-weight: 600; text-decoration: none; display: inline-block; }
+.gto-btn.ghost { background: transparent; border: 1px solid var(--accent); color: var(--editor-fg); }
+.gto-close { position: absolute; top: 8px; right: 12px; background: transparent; border: 0; color: var(--gutter-fg); cursor: pointer; font-size: 16px; }
