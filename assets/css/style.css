@@ -142,10 +142,13 @@ body {
 }
 .tree-folder {
   display: flex; align-items: center; gap: 4px; padding: 2px 10px; font-size: 11px;
-  font-weight: 700; letter-spacing: .5px; color: var(--sidebar-head); cursor: default;
+  font-weight: 700; letter-spacing: .5px; color: var(--sidebar-head); cursor: pointer;
 }
+.tree-folder:hover { color: var(--sidebar-fg); }
+.tree-folder:hover .tree-chevron { color: var(--accent); }
 .tree-chevron { font-size: 12px; }
 .tree { list-style: none; flex: 1; overflow-y: auto; }
+.tree.collapsed { display: none; }
 .tree-item {
   display: flex; align-items: center; gap: 8px; padding: 3px 10px 3px 26px;
   font-size: var(--fz); cursor: pointer; color: var(--sidebar-fg); white-space: nowrap;

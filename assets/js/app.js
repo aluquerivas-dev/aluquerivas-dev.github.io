@@ -560,6 +560,15 @@
     $("#actRun").addEventListener("click", () => openFile("game.js"));
     $("#actTheme").addEventListener("click", () => { buildThemeList(); show("themeOverlay"); });
     $("#hamburger").addEventListener("click", () => $("#sidebar").classList.toggle("open"));
+    // Plegar/desplegar la carpeta PORTFOLIO
+    const treeFolder = document.querySelector(".tree-folder");
+    if (treeFolder) {
+      treeFolder.addEventListener("click", () => {
+        const collapsed = $("#tree").classList.toggle("collapsed");
+        const ch = treeFolder.querySelector(".tree-chevron");
+        if (ch) ch.textContent = collapsed ? "›" : "⌄";
+      });
+    }
     // status bar
     $("#statusLangBtn").addEventListener("click", () => { buildLangList(); show("langOverlay"); });
     $("#statusThemeBtn").addEventListener("click", () => { buildThemeList(); show("themeOverlay"); });
