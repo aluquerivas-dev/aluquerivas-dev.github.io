@@ -122,10 +122,10 @@ window.PORTFOLIO = {
           '  company: "Easysoft Tech S.L.",\n' +
           '  location: "Córdoba, España",\n' +
           "  available: true,\n" +
-          '  focus: ["Dolibarr ERP", "PHP", "JavaScript", "MySQL"],\n\n' +
-          '  bio: "Desarrollador full-stack centrado en software de gestión. " +\n' +
-          '       "Creo módulos a medida para Dolibarr ERP, informes avanzados " +\n' +
-          '       "e integraciones que resuelven problemas reales de negocio.",\n' +
+          '  focus: ["Full-Stack", "PHP / Laravel", "JavaScript / Node", "SaaS & APIs"],\n\n' +
+          '  bio: "Desarrollador full-stack y arquitecto de software. Construyo " +\n' +
+          '       "desde ERPs (Dolibarr) hasta SaaS a medida (Mensaru, easyOCR), " +\n' +
+          '       "APIs e integraciones. Stack amplio: PHP/Laravel, JS/Node, MEAN.",\n' +
           "};\n\nexport default albert;",
         "projects.json":
           "{\n  \"projects\": [\n" +
@@ -137,14 +137,16 @@ window.PORTFOLIO = {
         "skills.md":
           "# Skills & Tecnologías\n\n## Lenguajes\n" +
           "- **PHP**          ██████████████  100%\n" +
-          "- **JavaScript**   ███████████░░░  80%\n" +
-          "- **SQL / MySQL**  ████████████░░  85%\n" +
-          "- **HTML & CSS**   ████████████░░  88%\n\n" +
-          "## Plataformas\n" +
-          "- **Dolibarr ERP** ██████████████  100%\n" +
-          "- **React**        █████████░░░░░  65%\n" +
-          "- **Node.js**      ████████░░░░░░  60%\n\n" +
-          "## Herramientas\nGit · Docker · Laravel · REST APIs · Composer · Laragon · Dolistore\n\n> Siempre aprendiendo algo nuevo 🚀",
+          "- **JavaScript**   ████████████░░  85%\n" +
+          "- **SQL / MySQL**  █████████████░  90%\n" +
+          "- **Python**       █████████░░░░░  70%\n\n" +
+          "## Frameworks & Plataformas\n" +
+          "- **Laravel**      █████████████░  90%\n" +
+          "- **Node.js**      ██████████░░░░  75%\n" +
+          "- **Angular**      █████████░░░░░  70%\n" +
+          "- **Dolibarr ERP** ██████████████  100%\n\n" +
+          "## Áreas\nFull-Stack · SaaS · APIs REST · Arquitectura · Integraciones · Ciencia de datos · MEAN · React\n\n" +
+          "## Herramientas\nGit · Docker · Composer · Linux · MongoDB · TypeScript · Laragon\n\n> Todoterreno: del ERP al SaaS a medida 🚀",
         "experience.log":
           "[ago 2025 — actualidad] EasySoft Tech SL · CTO & Cofundador\n" +
           "  INFO  Dirección técnica y arquitectura de producto (ERP · SaaS)\n" +
@@ -198,8 +200,8 @@ window.PORTFOLIO = {
         ],
         answers: {
           about: "Albert Luque Rivas es **CTO y cofundador de EasySoft Tech**. Ingeniero informático experto en **ERP, SaaS y arquitectura full-stack** (PHP, Dolibarr, Laravel, JavaScript).",
-          skills: "Domina **PHP**, **JavaScript**, **SQL/MySQL** y **HTML/CSS**, y sobre todo **Dolibarr ERP**. También usa React, Node.js, Git y Docker. Abre `skills.md` para verlo con detalle.",
-          projects: "Ha hecho personalizaciones de Dolibarr v18, módulos comerciales en **Dolistore**, una app de baterías a domicilio y reportes de ventas a medida. Mira `projects.json`.",
+          skills: "Full-stack: **PHP/Laravel**, **JavaScript/Node**, **MEAN**, SQL/MySQL y Python. Construye SaaS, APIs e integraciones, además de ERPs (Dolibarr). Abre `skills.md`.",
+          projects: "**Mensaru** (SaaS de mensajería WhatsApp+IA), **easyOCR** (SaaS de OCR en Laravel), cientos de módulos Dolibarr y personalizaciones de ERP v18. Mira `projects.json`.",
           experience: "**CTO y cofundador de EasySoft Tech** desde 2025. Antes: 5 años como full-stack en Cleverbyte Consulting y profesor de FP en MEDAC. Mira `experience.log`.",
           contact: "Escríbele a **aluquerivasdev@gmail.com**, por **LinkedIn** (in/albertoluquerivas) o visita easysoft.es. Abre `contact.md`.",
           languages: "Español nativo e inglés técnico.",
@@ -250,10 +252,10 @@ window.PORTFOLIO = {
           '  company: "Easysoft Tech S.L.",\n' +
           '  location: "Córdoba, Spain",\n' +
           "  available: true,\n" +
-          '  focus: ["Dolibarr ERP", "PHP", "JavaScript", "MySQL"],\n\n' +
-          '  bio: "Full-stack developer focused on business management software. " +\n' +
-          '       "I build custom Dolibarr ERP modules, advanced reports and " +\n' +
-          '       "integrations that solve real business problems.",\n' +
+          '  focus: ["Full-Stack", "PHP / Laravel", "JavaScript / Node", "SaaS & APIs"],\n\n' +
+          '  bio: "Full-stack developer and software architect. I build from " +\n' +
+          '       "ERPs (Dolibarr) to custom SaaS (Mensaru, easyOCR), APIs and " +\n' +
+          '       "integrations. Broad stack: PHP/Laravel, JS/Node, MEAN.",\n' +
           "};\n\nexport default albert;",
         "projects.json":
           "{\n  \"projects\": [\n" +
@@ -265,14 +267,16 @@ window.PORTFOLIO = {
         "skills.md":
           "# Skills & Technologies\n\n## Languages\n" +
           "- **PHP**          ██████████████  100%\n" +
-          "- **JavaScript**   ███████████░░░  80%\n" +
-          "- **SQL / MySQL**  ████████████░░  85%\n" +
-          "- **HTML & CSS**   ████████████░░  88%\n\n" +
-          "## Platforms\n" +
-          "- **Dolibarr ERP** ██████████████  100%\n" +
-          "- **React**        █████████░░░░░  65%\n" +
-          "- **Node.js**      ████████░░░░░░  60%\n\n" +
-          "## Tools\nGit · Docker · Laravel · REST APIs · Composer · Laragon · Dolistore\n\n> Always learning something new 🚀",
+          "- **JavaScript**   ████████████░░  85%\n" +
+          "- **SQL / MySQL**  █████████████░  90%\n" +
+          "- **Python**       █████████░░░░░  70%\n\n" +
+          "## Frameworks & Platforms\n" +
+          "- **Laravel**      █████████████░  90%\n" +
+          "- **Node.js**      ██████████░░░░  75%\n" +
+          "- **Angular**      █████████░░░░░  70%\n" +
+          "- **Dolibarr ERP** ██████████████  100%\n\n" +
+          "## Areas\nFull-Stack · SaaS · REST APIs · Architecture · Integrations · Data science · MEAN · React\n\n" +
+          "## Tools\nGit · Docker · Composer · Linux · MongoDB · TypeScript · Laragon\n\n> All-rounder: from ERP to custom SaaS 🚀",
         "experience.log":
           "[Aug 2025 — present] EasySoft Tech SL · CTO & Co-founder\n" +
           "  INFO  Technical leadership and product architecture (ERP · SaaS)\n" +
@@ -326,8 +330,8 @@ window.PORTFOLIO = {
         ],
         answers: {
           about: "Albert Luque Rivas is **CTO & co-founder of EasySoft Tech**. Computer engineer specialized in **ERP, SaaS and full-stack architecture** (PHP, Dolibarr, Laravel, JavaScript).",
-          skills: "He's strong in **PHP**, **JavaScript**, **SQL/MySQL** and **HTML/CSS**, and especially **Dolibarr ERP**. He also uses React, Node.js, Git and Docker. Open `skills.md`.",
-          projects: "He's done Dolibarr v18 customizations, commercial modules on **Dolistore**, a home-battery service app and custom sales reports. See `projects.json`.",
+          skills: "Full-stack: **PHP/Laravel**, **JavaScript/Node**, **MEAN**, SQL/MySQL and Python. He builds SaaS, APIs and integrations, plus ERPs (Dolibarr). Open `skills.md`.",
+          projects: "**Mensaru** (WhatsApp+AI messaging SaaS), **easyOCR** (OCR SaaS in Laravel), hundreds of Dolibarr modules and ERP v18 customizations. See `projects.json`.",
           experience: "**CTO & co-founder of EasySoft Tech** since 2025. Before: 5 years as full-stack at Cleverbyte Consulting and IT teacher at MEDAC. See `experience.log`.",
           contact: "Reach him at **aluquerivasdev@gmail.com**, on **LinkedIn** (in/albertoluquerivas) or at easysoft.es. Open `contact.md`.",
           languages: "Native Spanish and technical English.",
@@ -378,10 +382,10 @@ window.PORTFOLIO = {
           '  company: "Easysoft Tech S.L.",\n' +
           '  location: "Córdoba, Spanien",\n' +
           "  available: true,\n" +
-          '  focus: ["Dolibarr ERP", "PHP", "JavaScript", "MySQL"],\n\n' +
-          '  bio: "Full-Stack-Entwickler mit Fokus auf Unternehmenssoftware. " +\n' +
-          '       "Ich entwickle maßgeschneiderte Dolibarr-ERP-Module, " +\n' +
-          '       "erweiterte Berichte und Integrationen für echte Geschäftsprobleme.",\n' +
+          '  focus: ["Full-Stack", "PHP / Laravel", "JavaScript / Node", "SaaS & APIs"],\n\n' +
+          '  bio: "Full-Stack-Entwickler und Software-Architekt. Ich baue von " +\n' +
+          '       "ERPs (Dolibarr) bis zu maßgeschneiderten SaaS (Mensaru, easyOCR), " +\n' +
+          '       "APIs und Integrationen. Breiter Stack: PHP/Laravel, JS/Node, MEAN.",\n' +
           "};\n\nexport default albert;",
         "projects.json":
           "{\n  \"projects\": [\n" +
@@ -393,14 +397,16 @@ window.PORTFOLIO = {
         "skills.md":
           "# Skills & Technologien\n\n## Sprachen\n" +
           "- **PHP**          ██████████████  100%\n" +
-          "- **JavaScript**   ███████████░░░  80%\n" +
-          "- **SQL / MySQL**  ████████████░░  85%\n" +
-          "- **HTML & CSS**   ████████████░░  88%\n\n" +
-          "## Plattformen\n" +
-          "- **Dolibarr ERP** ██████████████  100%\n" +
-          "- **React**        █████████░░░░░  65%\n" +
-          "- **Node.js**      ████████░░░░░░  60%\n\n" +
-          "## Werkzeuge\nGit · Docker · Laravel · REST APIs · Composer · Laragon · Dolistore\n\n> Immer Neues lernen 🚀",
+          "- **JavaScript**   ████████████░░  85%\n" +
+          "- **SQL / MySQL**  █████████████░  90%\n" +
+          "- **Python**       █████████░░░░░  70%\n\n" +
+          "## Frameworks & Plattformen\n" +
+          "- **Laravel**      █████████████░  90%\n" +
+          "- **Node.js**      ██████████░░░░  75%\n" +
+          "- **Angular**      █████████░░░░░  70%\n" +
+          "- **Dolibarr ERP** ██████████████  100%\n\n" +
+          "## Bereiche\nFull-Stack · SaaS · REST-APIs · Architektur · Integrationen · Data Science · MEAN · React\n\n" +
+          "## Werkzeuge\nGit · Docker · Composer · Linux · MongoDB · TypeScript · Laragon\n\n> Allrounder: vom ERP bis zum maßgeschneiderten SaaS 🚀",
         "experience.log":
           "[Aug 2025 — heute] EasySoft Tech SL · CTO & Mitgründer\n" +
           "  INFO  Technische Leitung und Produktarchitektur (ERP · SaaS)\n" +
@@ -454,8 +460,8 @@ window.PORTFOLIO = {
         ],
         answers: {
           about: "Albert Luque Rivas ist **CTO & Mitgründer von EasySoft Tech**. Informatiker mit Schwerpunkt **ERP, SaaS und Full-Stack-Architektur** (PHP, Dolibarr, Laravel, JavaScript).",
-          skills: "Stark in **PHP**, **JavaScript**, **SQL/MySQL** und **HTML/CSS**, vor allem in **Dolibarr ERP**. Außerdem React, Node.js, Git und Docker. Öffne `skills.md`.",
-          projects: "Dolibarr-v18-Anpassungen, kommerzielle Module auf **Dolistore**, eine Batterie-Lieferdienst-App und eigene Verkaufsberichte. Siehe `projects.json`.",
+          skills: "Full-Stack: **PHP/Laravel**, **JavaScript/Node**, **MEAN**, SQL/MySQL und Python. Baut SaaS, APIs und Integrationen sowie ERPs (Dolibarr). Öffne `skills.md`.",
+          projects: "**Mensaru** (WhatsApp+KI-Messaging-SaaS), **easyOCR** (OCR-SaaS in Laravel), Hunderte Dolibarr-Module und ERP-v18-Anpassungen. Siehe `projects.json`.",
           experience: "**CTO & Mitgründer von EasySoft Tech** seit 2025. Davor: 5 Jahre Full-Stack bei Cleverbyte Consulting und IT-Dozent bei MEDAC. Siehe `experience.log`.",
           contact: "Erreich ihn unter **aluquerivasdev@gmail.com**, über **LinkedIn** (in/albertoluquerivas) oder easysoft.es. Öffne `contact.md`.",
           languages: "Spanisch als Muttersprache und technisches Englisch.",
@@ -506,10 +512,10 @@ window.PORTFOLIO = {
           '  company: "Easysoft Tech S.L.",\n' +
           '  location: "Córdoba, Spagna",\n' +
           "  available: true,\n" +
-          '  focus: ["Dolibarr ERP", "PHP", "JavaScript", "MySQL"],\n\n' +
-          '  bio: "Sviluppatore full-stack focalizzato sul software gestionale. " +\n' +
-          '       "Creo moduli Dolibarr ERP su misura, report avanzati e " +\n' +
-          '       "integrazioni che risolvono problemi reali di business.",\n' +
+          '  focus: ["Full-Stack", "PHP / Laravel", "JavaScript / Node", "SaaS & APIs"],\n\n' +
+          '  bio: "Sviluppatore full-stack e architetto software. Costruisco da " +\n' +
+          '       "ERP (Dolibarr) a SaaS su misura (Mensaru, easyOCR), API e " +\n' +
+          '       "integrazioni. Stack ampio: PHP/Laravel, JS/Node, MEAN.",\n' +
           "};\n\nexport default albert;",
         "projects.json":
           "{\n  \"projects\": [\n" +
@@ -521,14 +527,16 @@ window.PORTFOLIO = {
         "skills.md":
           "# Competenze & Tecnologie\n\n## Linguaggi\n" +
           "- **PHP**          ██████████████  100%\n" +
-          "- **JavaScript**   ███████████░░░  80%\n" +
-          "- **SQL / MySQL**  ████████████░░  85%\n" +
-          "- **HTML & CSS**   ████████████░░  88%\n\n" +
-          "## Piattaforme\n" +
-          "- **Dolibarr ERP** ██████████████  100%\n" +
-          "- **React**        █████████░░░░░  65%\n" +
-          "- **Node.js**      ████████░░░░░░  60%\n\n" +
-          "## Strumenti\nGit · Docker · Laravel · REST APIs · Composer · Laragon · Dolistore\n\n> Sempre in formazione 🚀",
+          "- **JavaScript**   ████████████░░  85%\n" +
+          "- **SQL / MySQL**  █████████████░  90%\n" +
+          "- **Python**       █████████░░░░░  70%\n\n" +
+          "## Framework & Piattaforme\n" +
+          "- **Laravel**      █████████████░  90%\n" +
+          "- **Node.js**      ██████████░░░░  75%\n" +
+          "- **Angular**      █████████░░░░░  70%\n" +
+          "- **Dolibarr ERP** ██████████████  100%\n\n" +
+          "## Aree\nFull-Stack · SaaS · API REST · Architettura · Integrazioni · Data science · MEAN · React\n\n" +
+          "## Strumenti\nGit · Docker · Composer · Linux · MongoDB · TypeScript · Laragon\n\n> Tuttofare: dall'ERP al SaaS su misura 🚀",
         "experience.log":
           "[ago 2025 — oggi] EasySoft Tech SL · CTO & Cofondatore\n" +
           "  INFO  Direzione tecnica e architettura di prodotto (ERP · SaaS)\n" +
@@ -582,8 +590,8 @@ window.PORTFOLIO = {
         ],
         answers: {
           about: "Albert Luque Rivas è **CTO e cofondatore di EasySoft Tech**. Ingegnere informatico specializzato in **ERP, SaaS e architettura full-stack** (PHP, Dolibarr, Laravel, JavaScript).",
-          skills: "Forte in **PHP**, **JavaScript**, **SQL/MySQL** e **HTML/CSS**, soprattutto in **Dolibarr ERP**. Usa anche React, Node.js, Git e Docker. Apri `skills.md`.",
-          projects: "Personalizzazioni Dolibarr v18, moduli commerciali su **Dolistore**, un'app per batterie a domicilio e report di vendita su misura. Vedi `projects.json`.",
+          skills: "Full-stack: **PHP/Laravel**, **JavaScript/Node**, **MEAN**, SQL/MySQL e Python. Crea SaaS, API e integrazioni, oltre a ERP (Dolibarr). Apri `skills.md`.",
+          projects: "**Mensaru** (SaaS di messaggistica WhatsApp+IA), **easyOCR** (SaaS OCR in Laravel), centinaia di moduli Dolibarr e personalizzazioni ERP v18. Vedi `projects.json`.",
           experience: "**CTO e cofondatore di EasySoft Tech** dal 2025. Prima: 5 anni full-stack in Cleverbyte Consulting e docente IT al MEDAC. Vedi `experience.log`.",
           contact: "Scrivigli a **aluquerivasdev@gmail.com**, su **LinkedIn** (in/albertoluquerivas) o su easysoft.es. Apri `contact.md`.",
           languages: "Spagnolo madrelingua e inglese tecnico.",
@@ -634,10 +642,10 @@ window.PORTFOLIO = {
           '  company: "Easysoft Tech S.L.",\n' +
           '  location: "Córdoba, Espagne",\n' +
           "  available: true,\n" +
-          '  focus: ["Dolibarr ERP", "PHP", "JavaScript", "MySQL"],\n\n' +
-          '  bio: "Développeur full-stack spécialisé dans les logiciels de gestion. " +\n' +
-          '       "Je crée des modules Dolibarr ERP sur mesure, des rapports avancés " +\n' +
-          '       "et des intégrations qui résolvent de vrais problèmes métier.",\n' +
+          '  focus: ["Full-Stack", "PHP / Laravel", "JavaScript / Node", "SaaS & APIs"],\n\n' +
+          '  bio: "Développeur full-stack et architecte logiciel. Je construis " +\n' +
+          '       "des ERP (Dolibarr) aux SaaS sur mesure (Mensaru, easyOCR), des " +\n' +
+          '       "API et intégrations. Stack large : PHP/Laravel, JS/Node, MEAN.",\n' +
           "};\n\nexport default albert;",
         "projects.json":
           "{\n  \"projects\": [\n" +
@@ -649,14 +657,16 @@ window.PORTFOLIO = {
         "skills.md":
           "# Compétences & Technologies\n\n## Langages\n" +
           "- **PHP**          ██████████████  100%\n" +
-          "- **JavaScript**   ███████████░░░  80%\n" +
-          "- **SQL / MySQL**  ████████████░░  85%\n" +
-          "- **HTML & CSS**   ████████████░░  88%\n\n" +
-          "## Plateformes\n" +
-          "- **Dolibarr ERP** ██████████████  100%\n" +
-          "- **React**        █████████░░░░░  65%\n" +
-          "- **Node.js**      ████████░░░░░░  60%\n\n" +
-          "## Outils\nGit · Docker · Laravel · REST APIs · Composer · Laragon · Dolistore\n\n> Toujours en train d'apprendre 🚀",
+          "- **JavaScript**   ████████████░░  85%\n" +
+          "- **SQL / MySQL**  █████████████░  90%\n" +
+          "- **Python**       █████████░░░░░  70%\n\n" +
+          "## Frameworks & Plateformes\n" +
+          "- **Laravel**      █████████████░  90%\n" +
+          "- **Node.js**      ██████████░░░░  75%\n" +
+          "- **Angular**      █████████░░░░░  70%\n" +
+          "- **Dolibarr ERP** ██████████████  100%\n\n" +
+          "## Domaines\nFull-Stack · SaaS · API REST · Architecture · Intégrations · Data science · MEAN · React\n\n" +
+          "## Outils\nGit · Docker · Composer · Linux · MongoDB · TypeScript · Laragon\n\n> Polyvalent : de l'ERP au SaaS sur mesure 🚀",
         "experience.log":
           "[août 2025 — présent] EasySoft Tech SL · CTO & Cofondateur\n" +
           "  INFO  Direction technique et architecture produit (ERP · SaaS)\n" +
@@ -710,8 +720,8 @@ window.PORTFOLIO = {
         ],
         answers: {
           about: "Albert Luque Rivas est **CTO & cofondateur d'EasySoft Tech**. Ingénieur informatique spécialisé en **ERP, SaaS et architecture full-stack** (PHP, Dolibarr, Laravel, JavaScript).",
-          skills: "Solide en **PHP**, **JavaScript**, **SQL/MySQL** et **HTML/CSS**, surtout en **Dolibarr ERP**. Aussi React, Node.js, Git et Docker. Ouvre `skills.md`.",
-          projects: "Personnalisations Dolibarr v18, modules commerciaux sur **Dolistore**, une app de batteries à domicile et des rapports de ventes sur mesure. Voir `projects.json`.",
+          skills: "Full-stack : **PHP/Laravel**, **JavaScript/Node**, **MEAN**, SQL/MySQL et Python. Il construit des SaaS, des API et intégrations, ainsi que des ERP (Dolibarr). Ouvre `skills.md`.",
+          projects: "**Mensaru** (SaaS de messagerie WhatsApp+IA), **easyOCR** (SaaS OCR en Laravel), des centaines de modules Dolibarr et personnalisations ERP v18. Voir `projects.json`.",
           experience: "**CTO & cofondateur d'EasySoft Tech** depuis 2025. Avant : 5 ans full-stack chez Cleverbyte Consulting et enseignant IT au MEDAC. Voir `experience.log`.",
           contact: "Contacte-le à **aluquerivasdev@gmail.com**, sur **LinkedIn** (in/albertoluquerivas) ou easysoft.es. Ouvre `contact.md`.",
           languages: "Espagnol natif et anglais technique.",

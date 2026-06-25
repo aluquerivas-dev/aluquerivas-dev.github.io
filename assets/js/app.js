@@ -225,7 +225,7 @@
       '<div class="dash-cta"><button class="dash-btn" data-act="ai">' + SPARK + " " + esc(d.askAI) + "</button>" +
       '<button class="dash-btn ghost" data-act="contact">✉️ ' + esc(d.hire) + "</button></div>" +
       "</div></section>" +
-      '<section class="dash-stats">' + stat("100%", "Dolibarr ERP") + stat("100%", "PHP") + stat("100+", d.statModules) + stat("★", "Dolistore") + "</section>" +
+      '<section class="dash-stats">' + stat("100%", "Full-Stack") + stat("100%", "PHP / Laravel") + stat("SaaS", "ERP · APIs · IA") + stat("MEAN", "Mongo · Express · Angular · Node") + "</section>" +
       '<section class="dash-section"><h2>' + esc(d.featured) + '</h2><div class="proj-grid">' + cards + "</div></section>" +
       '<section class="dash-section"><h2>' + esc(d.activity) + '</h2><div class="contrib" id="contrib"></div></section>' +
       '<section class="dash-section"><h2>' + esc(d.quicklinks) + '</h2><div class="dash-links">' + links + "</div></section>" +
