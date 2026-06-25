@@ -591,7 +591,7 @@
     cmdHistory.push(line); histPos = cmdHistory.length;
     const parts = raw.split(/\s+/), cmd = parts[0].toLowerCase(), args = parts.slice(1);
     const u = T().ui;
-    if (cmd === "help") termPrint(esc(u.help));
+    if (cmd === "help") { termPrint(esc(u.help)); termPrint('<span class="f-dim">' + (SECRETS_TXT[lang] || SECRETS_TXT.en).teaser + "</span>", ""); }
     else if (cmd === "ls") termPrint(FILES.map((f) => f.icon + " " + f.name).join("\n"));
     else if (cmd === "clear") $("#termOutput").innerHTML = "";
     else if (cmd === "whoami") termPrint("Alberto Luque Rivas — Full-Stack Developer");
@@ -606,6 +606,11 @@
       const t = GTO_TXT[lang] || GTO_TXT.en;
       termPrint('<span class="f-ok">🏍️😎 ' + t.title + "</span> — " + t.quote, "");
       showGtoCard();
+    }
+    else if (cmd === "secrets" || cmd === "?") {
+      const s = SECRETS_TXT[lang] || SECRETS_TXT.en;
+      termPrint('<span class="f-warn">' + s.title + "</span>", "");
+      s.clues.forEach((c) => termPrint('<span class="f-dim">' + c + "</span>", ""));
     }
     else if (cmd === "open" || cmd === "cat") {
       const n = resolveFile(args[0]);
@@ -985,25 +990,62 @@
     it: { title: "GREAT TEACHER ONIZUKA", sub: "Eikichi Onizuka · 22 anni · ex-motociclista", quote: "«Un bravo insegnante non abbandona mai un alunno… e non si arrende mai.»", watch: "▶ Guarda la sigla", close: "Chiudi" },
     fr: { title: "GREAT TEACHER ONIZUKA", sub: "Eikichi Onizuka · 22 ans · ex-motard", quote: "« Un bon prof n'abandonne jamais un élève… et n'abandonne jamais. »", watch: "▶ Voir l'opening", close: "Fermer" },
   };
+  const SECRETS_TXT = {
+    es: { teaser: "💡 Psst… este sitio esconde secretos. Escribe 'secrets' 👀", title: "🗺️ MAPA DE SECRETOS — pistas (sin destripar):", clues: [
+      "• 🎮 En la carpeta 'projects' hay juegos para picar.",
+      "• 🗝️ El comando 'secret' susurra un código mítico de los 90.",
+      "• 👨‍🏫 Llama a cierto Gran Profesor motero por su apellido japonés…",
+      "• 🧑‍💻 'Ver código fuente' guarda su propia pista.",
+    ] },
+    en: { teaser: "💡 Psst… this site hides a few secrets. Type 'secrets' 👀", title: "🗺️ SECRETS MAP — clues (no spoilers):", clues: [
+      "• 🎮 The 'projects' folder has games to beat.",
+      "• 🗝️ The 'secret' command whispers a legendary 90s code.",
+      "• 👨‍🏫 Call a certain biker Great Teacher by his Japanese surname…",
+      "• 🧑‍💻 'View source' hides its own clue.",
+    ] },
+    de: { teaser: "💡 Psst… diese Seite verbirgt Geheimnisse. Tippe 'secrets' 👀", title: "🗺️ GEHEIMNIS-KARTE — Hinweise (ohne Spoiler):", clues: [
+      "• 🎮 Im Ordner 'projects' warten Spiele.",
+      "• 🗝️ Der Befehl 'secret' flüstert einen legendären 90er-Code.",
+      "• 👨‍🏫 Ruf einen gewissen Biker-Lehrer bei seinem japanischen Nachnamen…",
+      "• 🧑‍💻 'Quelltext anzeigen' hat seinen eigenen Hinweis.",
+    ] },
+    it: { teaser: "💡 Psst… questo sito nasconde segreti. Scrivi 'secrets' 👀", title: "🗺️ MAPPA DEI SEGRETI — indizi (senza spoiler):", clues: [
+      "• 🎮 Nella cartella 'projects' ci sono giochi.",
+      "• 🗝️ Il comando 'secret' sussurra un mitico codice anni 90.",
+      "• 👨‍🏫 Chiama un certo Grande Insegnante motociclista col suo cognome…",
+      "• 🧑‍💻 'Visualizza sorgente' nasconde il suo indizio.",
+    ] },
+    fr: { teaser: "💡 Psst… ce site cache des secrets. Tape 'secrets' 👀", title: "🗺️ CARTE DES SECRETS — indices (sans spoiler) :", clues: [
+      "• 🎮 Le dossier 'projects' contient des jeux.",
+      "• 🗝️ La commande 'secret' murmure un code culte des annees 90.",
+      "• 👨‍🏫 Appelle un certain Grand Prof motard par son nom japonais…",
+      "• 🧑‍💻 'Afficher la source' cache son propre indice.",
+    ] },
+  };
   function showGtoCard() {
     const t = GTO_TXT[lang] || GTO_TXT.en;
     const ov = document.createElement("div"); ov.className = "gto-overlay";
     ov.innerHTML =
       '<div class="gto-card">' +
       '<button class="gto-close" aria-label="x">✕</button>' +
-      '<div class="gto-emoji">🏍️😎🔥</div>' +
+      '<div class="gto-media"><img class="gto-meme" src="assets/img/gto.png" alt="Great Teacher Onizuka" onerror="this.remove()" /></div>' +
       '<div class="gto-title">' + t.title + "</div>" +
       '<div class="gto-sub">' + t.sub + "</div>" +
       '<div class="gto-quote">' + t.quote + "</div>" +
       '<div class="gto-by">— Onizuka 🏍️</div>' +
       '<div class="gto-actions">' +
-      '<a class="gto-btn" href="https://www.youtube.com/results?search_query=GTO+great+teacher+onizuka+opening+driver%27s+high" target="_blank" rel="noopener">' + t.watch + "</a>" +
+      '<button class="gto-btn gto-watch">' + t.watch + "</button>" +
       '<button class="gto-btn ghost gto-dismiss">' + t.close + "</button>" +
       "</div></div>";
     document.body.appendChild(ov);
     const remove = () => { if (ov.parentNode) ov.parentNode.removeChild(ov); document.removeEventListener("keydown", onEsc); };
     function onEsc(e) { if (e.key === "Escape") remove(); }
     ov.addEventListener("click", (e) => { if (e.target === ov || e.target.classList.contains("gto-close") || e.target.classList.contains("gto-dismiss")) remove(); });
+    ov.querySelector(".gto-watch").addEventListener("click", (e) => {
+      e.stopPropagation();
+      ov.querySelector(".gto-media").innerHTML = '<div class="gto-video"><iframe src="https://www.youtube.com/embed/2JGl6UzfPkE?autoplay=1&rel=0" title="GTO opening" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe></div>';
+      e.target.style.display = "none";
+    });
     document.addEventListener("keydown", onEsc);
   }
 
@@ -1025,4 +1067,5 @@
   startFeed($("#problems"), PROBLEMS_POOL, 1700);
   tick(); setInterval(tick, 15000);
   runBoot();
+  try { console.log("%c👀 " + (SECRETS_TXT[lang] || SECRETS_TXT.en).teaser, "color:#fcee0a;font-weight:bold;font-size:13px"); } catch (e) {}
 })();
