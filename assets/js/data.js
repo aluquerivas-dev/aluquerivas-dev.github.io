@@ -28,6 +28,7 @@ window.PORTFOLIO = {
     { name: "interests.md", icon: "🎯", lang: "md", folder: "src" },
     { name: "projects.json", icon: "📦", lang: "json", folder: "projects" },
     { name: "game.js", icon: "🎮", lang: "js", game: true, folder: "projects" },
+    { name: "moto.js", icon: "🏍️", lang: "js", moto: true, folder: "projects" },
     { name: "contact.md", icon: "✉️", lang: "md", folder: "docs" },
     { name: "README.md", icon: "📖", lang: "md", folder: "docs" },
   ],

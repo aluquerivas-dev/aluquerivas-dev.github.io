@@ -184,6 +184,7 @@
     const f = fileByName[name];
     if (f.home) { renderDashboard(); $("#statusLn").textContent = "—"; return; }
     if (f.game) { renderGame(name); $("#statusLn").textContent = "GAME"; return; }
+    if (f.moto) { renderMoto(name); $("#statusLn").textContent = "GAME"; return; }
     const content = name === "projects.json" ? buildProjectsJson() : (T().files[name] || "");
     const lineCount = content.split("\n").length;
     let gutter = "";
@@ -420,6 +421,112 @@
     canvas.addEventListener("touchstart", onTS, { passive: true });
     canvas.addEventListener("touchend", onTE, { passive: true });
     btn.addEventListener("click", start);
+    reset(); fit(); state = "ready";
+    gameCleanup = function () { cancelAnimationFrame(raf); ro.disconnect(); document.removeEventListener("keydown", onKey); };
+  }
+
+  /* ---------- Mini-juego "Moto Run" (endless runner estilo dino) ---------- */
+  const MOTO_TXT = {
+    es: { play: "▶ Acelerar", retry: "↻ Otra vuelta", hint: "Salta los obstáculos · Espacio / ↑ / toca", over: "¡Te estrellaste!", dist: "Distancia" },
+    en: { play: "▶ Ride", retry: "↻ Retry", hint: "Jump the obstacles · Space / ↑ / tap", over: "You crashed!", dist: "Distance" },
+    de: { play: "▶ Losfahren", retry: "↻ Nochmal", hint: "Springe über Hindernisse · Leertaste / ↑ / tippen", over: "Crash!", dist: "Distanz" },
+    it: { play: "▶ Parti", retry: "↻ Riprova", hint: "Salta gli ostacoli · Spazio / ↑ / tocca", over: "Ti sei schiantato!", dist: "Distanza" },
+    fr: { play: "▶ Rouler", retry: "↻ Rejouer", hint: "Saute les obstacles · Espace / ↑ / touche", over: "Tu t'es crashé !", dist: "Distance" },
+  };
+  function renderMoto(name) {
+    const g = MOTO_TXT[lang] || MOTO_TXT.en;
+    $("#editor").innerHTML =
+      '<div class="game-wrap"><canvas class="game-canvas"></canvas>' +
+      '<div class="game-hud"><span class="game-score">0</span><span class="game-best">Best: 0</span></div>' +
+      '<div class="game-badge">🏍️ moto.js · canvas</div>' +
+      '<div class="game-overlay"><div class="game-title">🏍️ Moto Run</div>' +
+      '<div class="game-msg">' + g.hint + "</div>" +
+      '<button class="game-btn" type="button">' + g.play + "</button></div></div>";
+    const wrap = $("#editor").querySelector(".game-wrap");
+    const canvas = wrap.querySelector(".game-canvas");
+    const ctx = canvas.getContext("2d");
+    const scoreEl = wrap.querySelector(".game-score"), bestEl = wrap.querySelector(".game-best");
+    const overlay = wrap.querySelector(".game-overlay"), btn = wrap.querySelector(".game-btn");
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const G = 2600, JUMP = 860, MOTO_W = 44;
+    let viewW = 0, viewH = 0, ground = 0;
+    let moto, obstacles, speed, dist, score, state, last, raf, spawnTimer, lineOff;
+    let best; try { best = parseInt(localStorage.getItem("moto-best") || "0", 10) || 0; } catch (e) { best = 0; }
+    bestEl.textContent = "Best: " + best;
+    function fit() {
+      viewW = wrap.clientWidth || 300; viewH = wrap.clientHeight || 200;
+      canvas.width = viewW * dpr; canvas.height = viewH * dpr;
+      canvas.style.width = viewW + "px"; canvas.style.height = viewH + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ground = viewH - Math.max(46, Math.floor(viewH * 0.2));
+      draw();
+    }
+    const ro = new ResizeObserver(fit); ro.observe(wrap);
+    function reset() { moto = { y: 0, vy: 0, grounded: true }; obstacles = []; speed = 340; dist = 0; score = 0; spawnTimer = 0.9; lineOff = 0; scoreEl.textContent = "0"; }
+    function start() { reset(); state = "playing"; overlay.style.display = "none"; last = 0; cancelAnimationFrame(raf); raf = requestAnimationFrame(loop); }
+    function gameOver() {
+      state = "over";
+      if (score > best) { best = score; try { localStorage.setItem("moto-best", String(best)); } catch (e) {} bestEl.textContent = "Best: " + best; }
+      overlay.querySelector(".game-title").textContent = "💥 " + g.over;
+      overlay.querySelector(".game-msg").innerHTML = g.dist + ": <b>" + score + "</b> · Best: <b>" + best + "</b>";
+      btn.textContent = g.retry; overlay.style.display = "";
+    }
+    function jump() {
+      if (state === "ready" || state === "over") { start(); return; }
+      if (state === "playing" && moto.grounded) { moto.vy = -JUMP; moto.grounded = false; }
+    }
+    function step(dt) {
+      dist += speed * dt; lineOff = (lineOff + speed * dt) % 42; speed += 16 * dt;
+      spawnTimer -= dt;
+      if (spawnTimer <= 0) {
+        const tall = Math.random() < 0.32;
+        obstacles.push({ x: viewW + 12, w: tall ? 16 : 22, h: tall ? 44 : 26 });
+        spawnTimer = Math.max(0.5, (Math.random() * 0.5 + 0.75) - (speed - 340) / 1100);
+      }
+      moto.vy += G * dt; moto.y += moto.vy * dt;
+      if (moto.y >= 0) { moto.y = 0; moto.vy = 0; moto.grounded = true; }
+      const mL = 70, mR = 70 + MOTO_W, mB = ground + moto.y;
+      for (let i = obstacles.length - 1; i >= 0; i--) {
+        const o = obstacles[i]; o.x -= speed * dt;
+        if (o.x + o.w < -4) { obstacles.splice(i, 1); continue; }
+        if (mR > o.x + 5 && mL < o.x + o.w - 3 && mB > ground - o.h + 3) { gameOver(); return; }
+      }
+      score = Math.floor(dist / 10); scoreEl.textContent = String(score);
+    }
+    function draw() {
+      ctx.clearRect(0, 0, viewW, viewH);
+      ctx.fillStyle = cssVar("--editor"); ctx.fillRect(0, 0, viewW, viewH);
+      ctx.strokeStyle = cssVar("--accent"); ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(0, ground + 1); ctx.lineTo(viewW, ground + 1); ctx.stroke();
+      ctx.strokeStyle = cssVar("--gutter-fg"); ctx.lineWidth = 2;
+      for (let x = -lineOff; x < viewW; x += 42) { ctx.beginPath(); ctx.moveTo(x, ground + 14); ctx.lineTo(x + 20, ground + 14); ctx.stroke(); }
+      for (const o of obstacles) {
+        const oTop = ground - o.h;
+        ctx.fillStyle = cssVar("--tok-error");
+        ctx.beginPath(); ctx.moveTo(o.x + o.w / 2, oTop); ctx.lineTo(o.x, ground); ctx.lineTo(o.x + o.w, ground); ctx.closePath(); ctx.fill();
+        ctx.fillStyle = cssVar("--accent"); ctx.fillRect(o.x, oTop - 2, o.w, 2);
+      }
+      ctx.save();
+      ctx.translate(70 + MOTO_W, ground + moto.y + 5);
+      ctx.scale(-1, 1);
+      ctx.font = "34px serif"; ctx.textAlign = "left"; ctx.textBaseline = "bottom";
+      ctx.fillText("🏍️", 0, 0);
+      ctx.restore();
+    }
+    function loop(t) {
+      if (state !== "playing") return;
+      if (!last) last = t;
+      let dt = (t - last) / 1000; last = t; if (dt > 0.05) dt = 0.05;
+      step(dt); if (state !== "playing") { draw(); return; }
+      draw(); raf = requestAnimationFrame(loop);
+    }
+    function onKey(e) {
+      if (e.target && (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA")) return;
+      if (e.key === " " || e.code === "Space" || e.key === "ArrowUp" || (e.key || "").toLowerCase() === "w") { jump(); e.preventDefault(); }
+    }
+    document.addEventListener("keydown", onKey);
+    wrap.addEventListener("pointerdown", (e) => { if (e.target !== btn) jump(); });
+    btn.addEventListener("click", (e) => { e.stopPropagation(); start(); });
     reset(); fit(); state = "ready";
     gameCleanup = function () { cancelAnimationFrame(raf); ro.disconnect(); document.removeEventListener("keydown", onKey); };
   }
