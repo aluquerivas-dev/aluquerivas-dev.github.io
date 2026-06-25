@@ -490,6 +490,11 @@
     else if (cmd === "whoami") termPrint("Alberto Luque Rivas — Full-Stack Developer");
     else if (cmd === "date") termPrint(esc(new Date().toString()));
     else if (cmd === "social") termPrint(SOCIAL);
+    else if (cmd === "secret" || cmd === "tesoro" || cmd === "treasure" || cmd === "konami") {
+      const s = SECRET_TXT[lang] || SECRET_TXT.en;
+      termPrint('<span class="f-warn">' + s.clue + "</span>", "");
+      termPrint('<span class="f-ok">↑ ↑ ↓ ↓ ← → ← → B A</span>', "");
+    }
     else if (cmd === "open" || cmd === "cat") {
       const n = resolveFile(args[0]);
       if (!n) termPrint(cmd + ": " + esc(args[0] || "") + " ✗", "err");
@@ -722,6 +727,144 @@
     });
   }
 
+  /* ---------- Menú contextual estilo VS Code (bloquea el del navegador) ---------- */
+  function copyText(txt) {
+    try { navigator.clipboard.writeText(txt); }
+    catch (e) {
+      const ta = document.createElement("textarea"); ta.value = txt;
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); } catch (e2) {}
+      ta.remove();
+    }
+  }
+  const CTX_TXT = {
+    es: { open: "Abrir", copyName: "Copiar nombre", search: "Buscar archivo", ai: "Abrir copiloto IA", theme: "Cambiar tema", lang: "Cambiar idioma", game: "Jugar (game.js)", source: "Ver código (GitHub)", copyLink: "Copiar enlace" },
+    en: { open: "Open", copyName: "Copy name", search: "Search file", ai: "Open AI copilot", theme: "Change theme", lang: "Change language", game: "Play (game.js)", source: "View source (GitHub)", copyLink: "Copy link" },
+    de: { open: "Öffnen", copyName: "Name kopieren", search: "Datei suchen", ai: "KI-Copilot öffnen", theme: "Thema wechseln", lang: "Sprache wechseln", game: "Spielen (game.js)", source: "Quellcode (GitHub)", copyLink: "Link kopieren" },
+    it: { open: "Apri", copyName: "Copia nome", search: "Cerca file", ai: "Apri copilota IA", theme: "Cambia tema", lang: "Cambia lingua", game: "Gioca (game.js)", source: "Codice (GitHub)", copyLink: "Copia link" },
+    fr: { open: "Ouvrir", copyName: "Copier le nom", search: "Rechercher un fichier", ai: "Ouvrir le copilote IA", theme: "Changer de thème", lang: "Changer de langue", game: "Jouer (game.js)", source: "Code source (GitHub)", copyLink: "Copier le lien" },
+  };
+  function initContextMenu() {
+    const menu = document.createElement("div");
+    menu.className = "ctxmenu"; menu.hidden = true;
+    document.body.appendChild(menu);
+    const hide = () => { menu.hidden = true; };
+    function build(e) {
+      const c = CTX_TXT[lang] || CTX_TXT.en;
+      const treeItem = e.target.closest ? e.target.closest(".tree-item") : null;
+      const items = [];
+      if (treeItem && fileByName[treeItem.dataset.file]) {
+        const fn = treeItem.dataset.file;
+        items.push({ ic: fileByName[fn].icon, label: c.open, key: "Enter", act: () => openFile(fn) });
+        items.push({ ic: "🏷️", label: c.copyName, act: () => copyText(fn) });
+        items.push({ sep: true });
+      }
+      items.push({ ic: "🔍", label: c.search, key: "Ctrl+P", act: openPalette });
+      items.push({ ic: SPARK, label: c.ai, key: "Ctrl+I", act: () => openAI(true) });
+      items.push({ sep: true });
+      items.push({ ic: "🎨", label: c.theme, act: () => { buildThemeList(); show("themeOverlay"); } });
+      items.push({ ic: "🌐", label: c.lang, act: () => { buildLangList(); show("langOverlay"); } });
+      items.push({ sep: true });
+      items.push({ ic: "🎮", label: c.game, act: () => openFile("game.js") });
+      items.push({ sep: true });
+      items.push({ ic: "⎇", label: c.source, act: () => window.open("https://github.com/aluquerivas-dev/aluquerivas-dev.github.io", "_blank", "noopener") });
+      items.push({ ic: "🔗", label: c.copyLink, act: () => copyText(location.href) });
+      menu.innerHTML = "";
+      items.forEach((it) => {
+        if (it.sep) { const s = document.createElement("div"); s.className = "ctx-sep"; menu.appendChild(s); return; }
+        const el = document.createElement("div");
+        el.className = "ctx-item";
+        el.innerHTML = '<span class="ctx-ic">' + it.ic + '</span><span class="ctx-label">' + it.label + "</span>" + (it.key ? '<span class="ctx-key">' + it.key + "</span>" : "");
+        el.addEventListener("click", (ev) => { ev.stopPropagation(); hide(); if (it.act) it.act(); });
+        menu.appendChild(el);
+      });
+    }
+    document.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+      build(e);
+      menu.hidden = false;
+      const mw = menu.offsetWidth, mh = menu.offsetHeight;
+      let x = e.clientX, y = e.clientY;
+      if (x + mw > window.innerWidth - 6) x = window.innerWidth - mw - 6;
+      if (y + mh > window.innerHeight - 6) y = window.innerHeight - mh - 6;
+      menu.style.left = Math.max(4, x) + "px";
+      menu.style.top = Math.max(4, y) + "px";
+    });
+    document.addEventListener("click", hide);
+    document.addEventListener("scroll", hide, true);
+    window.addEventListener("blur", hide);
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") hide(); });
+  }
+
+  /* ---------- Búsqueda del tesoro (easter egg: código Konami) ---------- */
+  const SECRET_TXT = {
+    es: { clue: "🗝️ Estás cerca… El código sagrado de los gamers de los 90:", found: "🏆 ¡TESORO ENCONTRADO! Eres de los que rebuscan de verdad. 🏍️" },
+    en: { clue: "🗝️ You're close… The sacred 90s gamer code:", found: "🏆 TREASURE FOUND! A true digger. 🏍️" },
+    de: { clue: "🗝️ Du bist nah dran… Der heilige 90er-Gamer-Code:", found: "🏆 SCHATZ GEFUNDEN! Ein echter Sucher. 🏍️" },
+    it: { clue: "🗝️ Ci sei quasi… Il sacro codice gamer anni '90:", found: "🏆 TESORO TROVATO! Un vero cercatore. 🏍️" },
+    fr: { clue: "🗝️ Tu y es presque… Le code sacré des gamers des 90's :", found: "🏆 TRÉSOR TROUVÉ ! Un vrai fouineur. 🏍️" },
+  };
+  function matrixRain(durationMs) {
+    const cv = document.createElement("canvas"); cv.className = "matrix-rain";
+    document.body.appendChild(cv);
+    const ctx = cv.getContext("2d");
+    const fontSize = 16; let cols = 0; const drops = [];
+    function size() { cv.width = window.innerWidth; cv.height = window.innerHeight; cols = Math.floor(cv.width / fontSize); for (let i = 0; i < cols; i++) if (drops[i] === undefined) drops[i] = (Math.random() * 40) | 0; }
+    size(); window.addEventListener("resize", size);
+    const chars = "アァカサタナハマヤラ0123456789</>{};=$#@ALBERTO".split("");
+    function draw() {
+      ctx.fillStyle = "rgba(8,8,10,0.07)"; ctx.fillRect(0, 0, cv.width, cv.height);
+      ctx.font = fontSize + "px monospace";
+      for (let i = 0; i < cols; i++) {
+        ctx.fillStyle = Math.random() > 0.97 ? "#fcee0a" : "#00e676";
+        ctx.fillText(chars[(Math.random() * chars.length) | 0], i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > cv.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+    const iv = setInterval(draw, 55);
+    let ended = false;
+    function end() {
+      if (ended) return; ended = true;
+      clearInterval(iv); cv.classList.add("fade");
+      window.removeEventListener("resize", size); document.removeEventListener("keydown", onEsc);
+      setTimeout(() => cv.parentNode && cv.parentNode.removeChild(cv), 650);
+    }
+    function onEsc(e) { if (e.key === "Escape") end(); }
+    document.addEventListener("keydown", onEsc);
+    cv.addEventListener("click", end);
+    setTimeout(end, durationMs || 6500);
+  }
+  function addTrophyToStatus() {
+    if (document.getElementById("statusTrophy")) return;
+    const clock = $("#statusClock"); if (!clock) return;
+    const el = document.createElement("span");
+    el.className = "status-item"; el.id = "statusTrophy"; el.textContent = "🏆"; el.title = "Tesoro encontrado";
+    clock.parentNode.insertBefore(el, clock);
+  }
+  function unlockTreasure() {
+    const s = SECRET_TXT[lang] || SECRET_TXT.en;
+    matrixRain(6500);
+    const toast = document.createElement("div");
+    toast.className = "treasure-toast";
+    toast.innerHTML = "<b>" + s.found + "</b><br><small>— Alberto · Konami ↑↑↓↓←→←→ B A</small>";
+    document.body.appendChild(toast);
+    setTimeout(() => { toast.classList.add("fade"); setTimeout(() => toast.parentNode && toast.parentNode.removeChild(toast), 700); }, 5000);
+    try { localStorage.setItem("treasure", "1"); } catch (e) {}
+    addTrophyToStatus();
+    try { console.log("%c🏆 " + s.found, "color:#fcee0a;font-size:16px;font-weight:bold"); } catch (e) {}
+  }
+  function initTreasure() {
+    try { if (localStorage.getItem("treasure")) addTrophyToStatus(); } catch (e) {}
+    const KONAMI = ["arrowup", "arrowup", "arrowdown", "arrowdown", "arrowleft", "arrowright", "arrowleft", "arrowright", "b", "a"];
+    let idx = 0;
+    document.addEventListener("keydown", (e) => {
+      const k = (e.key || "").toLowerCase();
+      if (k === KONAMI[idx]) { idx++; if (idx === KONAMI.length) { idx = 0; unlockTreasure(); } }
+      else { idx = (k === KONAMI[0]) ? 1 : 0; }
+    });
+  }
+
   /* ---------- Init ---------- */
   document.documentElement.setAttribute("data-theme", theme);
   applyI18n();
@@ -734,6 +877,8 @@
   termWelcome();
   renderSuggestions();
   wirePanelTabs();
+  initContextMenu();
+  initTreasure();
   startFeed($("#output"), OUTPUT_POOL, 1300);
   startFeed($("#problems"), PROBLEMS_POOL, 1700);
   tick(); setInterval(tick, 15000);

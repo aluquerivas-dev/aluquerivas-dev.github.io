@@ -574,3 +574,23 @@ html[data-theme="cyberpunk"] {
   .status-item { padding: 0 5px; }
   .terminal, .panel-feed, .term-input { font-size: 12px; }
 }
+
+/* ===== Context menu (estilo VS Code) ===== */
+.ctxmenu { position: fixed; z-index: 200; min-width: 222px; background: var(--sidebar); border: 1px solid var(--border); border-radius: 6px; box-shadow: 0 8px 28px rgba(0,0,0,.55); padding: 4px; font-size: 13px; color: var(--sidebar-fg); user-select: none; }
+.ctxmenu[hidden] { display: none; }
+.ctx-item { display: flex; align-items: center; gap: 10px; padding: 6px 12px; border-radius: 4px; cursor: pointer; white-space: nowrap; }
+.ctx-item:hover { background: var(--accent); color: var(--on-accent); }
+.ctx-ic { width: 16px; display: inline-flex; justify-content: center; font-size: 13px; }
+.ctx-ic .ic-spark { width: 13px; height: 13px; }
+.ctx-label { flex: 0 1 auto; }
+.ctx-key { margin-left: auto; opacity: .55; font-size: 11px; padding-left: 28px; font-family: var(--font-mono); }
+.ctx-item:hover .ctx-key { opacity: .85; }
+.ctx-sep { height: 1px; background: var(--border); margin: 4px 6px; }
+
+/* ===== Easter egg (búsqueda del tesoro) ===== */
+.matrix-rain { position: fixed; inset: 0; z-index: 1500; background: #08080a; transition: opacity .6s ease; cursor: pointer; }
+.matrix-rain.fade { opacity: 0; }
+.treasure-toast { position: fixed; left: 50%; bottom: 42px; transform: translateX(-50%); z-index: 1600; background: var(--sidebar); border: 1px solid var(--accent); color: var(--editor-fg); padding: 14px 22px; border-radius: 10px; box-shadow: 0 0 34px color-mix(in srgb, var(--accent) 50%, transparent); font-size: 14px; text-align: center; max-width: 90vw; transition: opacity .6s ease; }
+.treasure-toast.fade { opacity: 0; }
+.treasure-toast b { color: var(--accent); }
+.treasure-toast small { color: var(--gutter-fg); }
