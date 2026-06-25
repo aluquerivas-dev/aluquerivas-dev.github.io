@@ -173,7 +173,7 @@ window.PORTFOLIO = {
         "contact.md":
           "# Contacto\n\n¿Tienes un proyecto en mente? Hablemos.\n\n" +
           "- 📧 [aluquerivasdev@gmail.com](mailto:aluquerivasdev@gmail.com)\n- 🏢 [desarrollo@easysoft.es](mailto:desarrollo@easysoft.es)\n" +
-          "- 💼 [LinkedIn](https://es.linkedin.com/in/albertoluquerivas)\n" +
+          "- 💼 [LinkedIn](https://es.linkedin.com/in/albertoluquerivas)\n- 🐙 [GitHub](https://github.com/aluquerivas-dev)\n" +
           "- 🌐 [easysoft.es](https://easysoft.es)\n" +
           "- 📚 [wiki.easysoft.es](https://wiki.easysoft.es)\n" +
           "- 🛒 [Dolistore](https://www.dolistore.com/index.php?controller=search&search_query=easysoft&n=60)",
@@ -301,7 +301,7 @@ window.PORTFOLIO = {
         "contact.md":
           "# Contact\n\nGot a project in mind? Let's talk.\n\n" +
           "- 📧 [aluquerivasdev@gmail.com](mailto:aluquerivasdev@gmail.com)\n- 🏢 [desarrollo@easysoft.es](mailto:desarrollo@easysoft.es)\n" +
-          "- 💼 [LinkedIn](https://es.linkedin.com/in/albertoluquerivas)\n" +
+          "- 💼 [LinkedIn](https://es.linkedin.com/in/albertoluquerivas)\n- 🐙 [GitHub](https://github.com/aluquerivas-dev)\n" +
           "- 🌐 [easysoft.es](https://easysoft.es)\n" +
           "- 📚 [wiki.easysoft.es](https://wiki.easysoft.es)\n" +
           "- 🛒 [Dolistore](https://www.dolistore.com/index.php?controller=search&search_query=easysoft&n=60)",
@@ -429,7 +429,7 @@ window.PORTFOLIO = {
         "contact.md":
           "# Kontakt\n\nHast du ein Projekt im Kopf? Lass uns reden.\n\n" +
           "- 📧 [aluquerivasdev@gmail.com](mailto:aluquerivasdev@gmail.com)\n- 🏢 [desarrollo@easysoft.es](mailto:desarrollo@easysoft.es)\n" +
-          "- 💼 [LinkedIn](https://es.linkedin.com/in/albertoluquerivas)\n" +
+          "- 💼 [LinkedIn](https://es.linkedin.com/in/albertoluquerivas)\n- 🐙 [GitHub](https://github.com/aluquerivas-dev)\n" +
           "- 🌐 [easysoft.es](https://easysoft.es)\n" +
           "- 📚 [wiki.easysoft.es](https://wiki.easysoft.es)\n" +
           "- 🛒 [Dolistore](https://www.dolistore.com/index.php?controller=search&search_query=easysoft&n=60)",
@@ -557,7 +557,7 @@ window.PORTFOLIO = {
         "contact.md":
           "# Contatti\n\nHai un progetto in mente? Parliamone.\n\n" +
           "- 📧 [aluquerivasdev@gmail.com](mailto:aluquerivasdev@gmail.com)\n- 🏢 [desarrollo@easysoft.es](mailto:desarrollo@easysoft.es)\n" +
-          "- 💼 [LinkedIn](https://es.linkedin.com/in/albertoluquerivas)\n" +
+          "- 💼 [LinkedIn](https://es.linkedin.com/in/albertoluquerivas)\n- 🐙 [GitHub](https://github.com/aluquerivas-dev)\n" +
           "- 🌐 [easysoft.es](https://easysoft.es)\n" +
           "- 📚 [wiki.easysoft.es](https://wiki.easysoft.es)\n" +
           "- 🛒 [Dolistore](https://www.dolistore.com/index.php?controller=search&search_query=easysoft&n=60)",
@@ -685,7 +685,7 @@ window.PORTFOLIO = {
         "contact.md":
           "# Contact\n\nUn projet en tête ? Parlons-en.\n\n" +
           "- 📧 [aluquerivasdev@gmail.com](mailto:aluquerivasdev@gmail.com)\n- 🏢 [desarrollo@easysoft.es](mailto:desarrollo@easysoft.es)\n" +
-          "- 💼 [LinkedIn](https://es.linkedin.com/in/albertoluquerivas)\n" +
+          "- 💼 [LinkedIn](https://es.linkedin.com/in/albertoluquerivas)\n- 🐙 [GitHub](https://github.com/aluquerivas-dev)\n" +
           "- 🌐 [easysoft.es](https://easysoft.es)\n" +
           "- 📚 [wiki.easysoft.es](https://wiki.easysoft.es)\n" +
           "- 🛒 [Dolistore](https://www.dolistore.com/index.php?controller=search&search_query=easysoft&n=60)",

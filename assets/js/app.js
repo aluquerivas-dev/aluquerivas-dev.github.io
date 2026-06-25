@@ -39,6 +39,7 @@
     '📚 <a href="https://wiki.easysoft.es" target="_blank" rel="noopener">wiki.easysoft.es</a>\n' +
     '🛒 <a href="https://www.dolistore.com/index.php?controller=search&search_query=easysoft&n=60" target="_blank" rel="noopener">dolistore.com</a>\n' +
     '💼 <a href="https://es.linkedin.com/in/albertoluquerivas" target="_blank" rel="noopener">linkedin.com/in/albertoluquerivas</a>\n' +
+    '🐙 <a href="https://github.com/aluquerivas-dev" target="_blank" rel="noopener">github.com/aluquerivas-dev</a>\n' +
     '📧 <a href="mailto:aluquerivasdev@gmail.com">aluquerivasdev@gmail.com</a>';
 
   const SPARK = '<svg class="ic-spark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.7 6.1L20 10l-6.3 1.9L12 18l-1.7-6.1L4 10l6.3-1.9z"/></svg>';
@@ -207,6 +208,7 @@
     const stat = (n, l) => '<div class="stat-card"><div class="stat-num">' + n + '</div><div class="stat-lbl">' + esc(l) + "</div></div>";
     const links =
       '<a href="https://es.linkedin.com/in/albertoluquerivas" target="_blank" rel="noopener">💼 LinkedIn</a>' +
+      '<a href="https://github.com/aluquerivas-dev" target="_blank" rel="noopener">🐙 GitHub</a>' +
       '<a href="https://www.dolistore.com/index.php?controller=search&search_query=easysoft&n=60" target="_blank" rel="noopener">🛒 Dolistore</a>' +
       '<a href="https://wiki.easysoft.es" target="_blank" rel="noopener">📚 Wiki</a>' +
       '<a href="https://easysoft.es" target="_blank" rel="noopener">🌐 easysoft.es</a>' +
