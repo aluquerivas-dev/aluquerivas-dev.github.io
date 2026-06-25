@@ -1,6 +1,6 @@
 /* ============================================================
    data.js — Contenido del portfolio + i18n (ES·EN·DE·IT·FR)
-   + base de conocimiento del copiloto "Ask Albert AI"
+   + base de conocimiento del copiloto "Ask Alberto AI"
    Edita aquí tus textos. Todo es texto plano, sin dependencias.
    ============================================================ */
 window.PORTFOLIO = {
@@ -89,15 +89,15 @@ window.PORTFOLIO = {
         menu: { file: "Archivo", edit: "Editar", view: "Ver", go: "Ir", run: "Ejecutar", terminal: "Terminal", help: "Ayuda" },
         explorer: "Explorador", terminalTab: "Terminal", problems: "Problemas", output: "Salida",
         statusReady: "Listo", searchPlaceholder: "Escribe el nombre de un archivo…",
-        aiTitle: "Ask Albert AI", aiSubtitle: "Pregúntame sobre Albert",
-        aiPlaceholder: "Escribe tu pregunta…", aiThinking: "Albert AI está escribiendo",
+        aiTitle: "Ask Alberto AI", aiSubtitle: "Pregúntame sobre Alberto",
+        aiPlaceholder: "Escribe tu pregunta…", aiThinking: "Alberto AI está escribiendo",
         langTitle: "Paquetes de idioma", langSubtitle: "Elige el idioma de la interfaz",
         langActive: "Activo", langInstall: "Activar",
         themeTitle: "Temas de color", themeSubtitle: "Elige tu tema",
-        boot: ["$ boot albert-os", "Cargando kernel del portfolio…", "Montando módulos: about, projects, skills…", "Iniciando copiloto Ask Albert AI…", "Listo ✓"],
+        boot: ["$ boot albert-os", "Cargando kernel del portfolio…", "Montando módulos: about, projects, skills…", "Iniciando copiloto Ask Alberto AI…", "Listo ✓"],
         bootEnter: "Pulsa para entrar",
         tip: "Tip: abre la terminal y escribe help",
-        aiHint: "✦ Pregúntale a la IA sobre Albert",
+        aiHint: "✦ Pregúntale a la IA sobre Alberto",
         opening: "Abriendo",
         help:
           "Comandos disponibles:\n" +
@@ -115,9 +115,9 @@ window.PORTFOLIO = {
       },
       files: {
         "about.js":
-          "/**\n * about.js — Albert Luque Rivas\n * Full-Stack Developer · Especialista en Dolibarr ERP\n */\n\n" +
+          "/**\n * about.js — Alberto Luque Rivas\n * Full-Stack Developer · Especialista en Dolibarr ERP\n */\n\n" +
           "const albert = {\n" +
-          '  name: "Albert Luque Rivas",\n' +
+          '  name: "Alberto Luque Rivas",\n' +
           '  headline: "CTO & Cofundador @ EasySoft Tech | ERP · SaaS · Full-Stack",\n' +
           '  company: "Easysoft Tech S.L.",\n' +
           '  location: "Córdoba, España",\n' +
@@ -180,18 +180,18 @@ window.PORTFOLIO = {
           "- 📚 [wiki.easysoft.es](https://wiki.easysoft.es)\n" +
           "- 🛒 [Dolistore](https://www.dolistore.com/index.php?controller=search&search_query=easysoft&n=60)",
         "README.md":
-          "# Portfolio — Albert Luque Rivas\n\n" +
+          "# Portfolio — Alberto Luque Rivas\n\n" +
           "Portfolio con **interfaz tipo IDE**, copiloto de **IA** y soporte de **5 idiomas**.\n" +
           "Hecho con HTML, CSS y JavaScript vanilla. Sin build.\n\n" +
           "## Uso\nAbre index.html o sírvelo con Live Server.\n\n" +
           "## Idiomas\nPulsa el icono 🌐 (barra lateral) y elige idioma.\n\n" +
-          "## IA\nPulsa el icono ✦ para abrir el copiloto y pregúntale sobre Albert.",
+          "## IA\nPulsa el icono ✦ para abrir el copiloto y pregúntale sobre Alberto.",
         "game.js":
           "// game.js — mini-juego Snake en canvas (vanilla, sin dependencias)\n" +
           "// Pulsa Jugar. Controles: flechas / WASD · swipe en el móvil.",
       },
       ai: {
-        greeting: "¡Hola! 👋 Soy el copiloto de Albert. Pregúntame por sus skills, proyectos, experiencia o cómo contactarlo.",
+        greeting: "¡Hola! 👋 Soy el copiloto de Alberto. Pregúntame por sus skills, proyectos, experiencia o cómo contactarlo.",
         suggestions: [
           { label: "🧩 Skills", q: "¿Qué tecnologías dominas?" },
           { label: "📦 Proyectos", q: "Háblame de tus proyectos" },
@@ -199,7 +199,7 @@ window.PORTFOLIO = {
           { label: "✉️ Contacto", q: "¿Cómo te contacto?" },
         ],
         answers: {
-          about: "Albert Luque Rivas es **CTO y cofundador de EasySoft Tech**. Ingeniero informático experto en **ERP, SaaS y arquitectura full-stack** (PHP, Dolibarr, Laravel, JavaScript).",
+          about: "Alberto Luque Rivas es **CTO y cofundador de EasySoft Tech**. Ingeniero informático experto en **ERP, SaaS y arquitectura full-stack** (PHP, Dolibarr, Laravel, JavaScript).",
           skills: "Full-stack: **PHP/Laravel**, **JavaScript/Node**, **MEAN**, SQL/MySQL y Python. Construye SaaS, APIs e integraciones, además de ERPs (Dolibarr). Abre `skills.md`.",
           projects: "**Mensaru** (SaaS de mensajería WhatsApp+IA), **easyOCR** (SaaS de OCR en Laravel), cientos de módulos Dolibarr y personalizaciones de ERP v18. Mira `projects.json`.",
           experience: "**CTO y cofundador de EasySoft Tech** desde 2025. Antes: 5 años como full-stack en Cleverbyte Consulting y profesor de FP en MEDAC. Mira `experience.log`.",
@@ -219,15 +219,15 @@ window.PORTFOLIO = {
         menu: { file: "File", edit: "Edit", view: "View", go: "Go", run: "Run", terminal: "Terminal", help: "Help" },
         explorer: "Explorer", terminalTab: "Terminal", problems: "Problems", output: "Output",
         statusReady: "Ready", searchPlaceholder: "Type a file name…",
-        aiTitle: "Ask Albert AI", aiSubtitle: "Ask me about Albert",
-        aiPlaceholder: "Type your question…", aiThinking: "Albert AI is typing",
+        aiTitle: "Ask Alberto AI", aiSubtitle: "Ask me about Alberto",
+        aiPlaceholder: "Type your question…", aiThinking: "Alberto AI is typing",
         langTitle: "Language packs", langSubtitle: "Choose the interface language",
         langActive: "Active", langInstall: "Activate",
         themeTitle: "Color themes", themeSubtitle: "Choose your theme",
-        boot: ["$ boot albert-os", "Loading portfolio kernel…", "Mounting modules: about, projects, skills…", "Starting Ask Albert AI copilot…", "Ready ✓"],
+        boot: ["$ boot albert-os", "Loading portfolio kernel…", "Mounting modules: about, projects, skills…", "Starting Ask Alberto AI copilot…", "Ready ✓"],
         bootEnter: "Click to enter",
         tip: "Tip: open the terminal and type help",
-        aiHint: "✦ Ask the AI about Albert",
+        aiHint: "✦ Ask the AI about Alberto",
         opening: "Opening",
         help:
           "Available commands:\n" +
@@ -245,9 +245,9 @@ window.PORTFOLIO = {
       },
       files: {
         "about.js":
-          "/**\n * about.js — Albert Luque Rivas\n * Full-Stack Developer · Dolibarr ERP Specialist\n */\n\n" +
+          "/**\n * about.js — Alberto Luque Rivas\n * Full-Stack Developer · Dolibarr ERP Specialist\n */\n\n" +
           "const albert = {\n" +
-          '  name: "Albert Luque Rivas",\n' +
+          '  name: "Alberto Luque Rivas",\n' +
           '  headline: "CTO & Co-founder @ EasySoft Tech | ERP · SaaS · Full-Stack",\n' +
           '  company: "Easysoft Tech S.L.",\n' +
           '  location: "Córdoba, Spain",\n' +
@@ -310,18 +310,18 @@ window.PORTFOLIO = {
           "- 📚 [wiki.easysoft.es](https://wiki.easysoft.es)\n" +
           "- 🛒 [Dolistore](https://www.dolistore.com/index.php?controller=search&search_query=easysoft&n=60)",
         "README.md":
-          "# Portfolio — Albert Luque Rivas\n\n" +
+          "# Portfolio — Alberto Luque Rivas\n\n" +
           "Portfolio with an **IDE-style interface**, an **AI** copilot and **5 languages**.\n" +
           "Built with vanilla HTML, CSS and JavaScript. No build step.\n\n" +
           "## Usage\nOpen index.html or serve it with Live Server.\n\n" +
           "## Languages\nClick the 🌐 icon (side bar) and pick a language.\n\n" +
-          "## AI\nClick the ✦ icon to open the copilot and ask about Albert.",
+          "## AI\nClick the ✦ icon to open the copilot and ask about Alberto.",
         "game.js":
           "// game.js — Snake mini-game on canvas (vanilla, no dependencies)\n" +
           "// Press Play. Controls: arrows / WASD · swipe on mobile.",
       },
       ai: {
-        greeting: "Hi! 👋 I'm Albert's copilot. Ask me about his skills, projects, experience or how to reach him.",
+        greeting: "Hi! 👋 I'm Alberto's copilot. Ask me about his skills, projects, experience or how to reach him.",
         suggestions: [
           { label: "🧩 Skills", q: "What technologies do you know?" },
           { label: "📦 Projects", q: "Tell me about your projects" },
@@ -329,7 +329,7 @@ window.PORTFOLIO = {
           { label: "✉️ Contact", q: "How can I contact you?" },
         ],
         answers: {
-          about: "Albert Luque Rivas is **CTO & co-founder of EasySoft Tech**. Computer engineer specialized in **ERP, SaaS and full-stack architecture** (PHP, Dolibarr, Laravel, JavaScript).",
+          about: "Alberto Luque Rivas is **CTO & co-founder of EasySoft Tech**. Computer engineer specialized in **ERP, SaaS and full-stack architecture** (PHP, Dolibarr, Laravel, JavaScript).",
           skills: "Full-stack: **PHP/Laravel**, **JavaScript/Node**, **MEAN**, SQL/MySQL and Python. He builds SaaS, APIs and integrations, plus ERPs (Dolibarr). Open `skills.md`.",
           projects: "**Mensaru** (WhatsApp+AI messaging SaaS), **easyOCR** (OCR SaaS in Laravel), hundreds of Dolibarr modules and ERP v18 customizations. See `projects.json`.",
           experience: "**CTO & co-founder of EasySoft Tech** since 2025. Before: 5 years as full-stack at Cleverbyte Consulting and IT teacher at MEDAC. See `experience.log`.",
@@ -349,15 +349,15 @@ window.PORTFOLIO = {
         menu: { file: "Datei", edit: "Bearbeiten", view: "Ansicht", go: "Gehe zu", run: "Ausführen", terminal: "Terminal", help: "Hilfe" },
         explorer: "Explorer", terminalTab: "Terminal", problems: "Probleme", output: "Ausgabe",
         statusReady: "Bereit", searchPlaceholder: "Dateinamen eingeben…",
-        aiTitle: "Ask Albert AI", aiSubtitle: "Frag mich über Albert",
-        aiPlaceholder: "Stelle deine Frage…", aiThinking: "Albert AI schreibt",
+        aiTitle: "Ask Alberto AI", aiSubtitle: "Frag mich über Alberto",
+        aiPlaceholder: "Stelle deine Frage…", aiThinking: "Alberto AI schreibt",
         langTitle: "Sprachpakete", langSubtitle: "Wähle die Sprache der Oberfläche",
         langActive: "Aktiv", langInstall: "Aktivieren",
         themeTitle: "Farbthemen", themeSubtitle: "Wähle dein Thema",
-        boot: ["$ boot albert-os", "Portfolio-Kernel wird geladen…", "Module werden geladen: about, projects, skills…", "Ask Albert AI Copilot wird gestartet…", "Bereit ✓"],
+        boot: ["$ boot albert-os", "Portfolio-Kernel wird geladen…", "Module werden geladen: about, projects, skills…", "Ask Alberto AI Copilot wird gestartet…", "Bereit ✓"],
         bootEnter: "Zum Eintreten klicken",
         tip: "Tipp: öffne das Terminal und tippe help",
-        aiHint: "✦ Frag die KI über Albert",
+        aiHint: "✦ Frag die KI über Alberto",
         opening: "Öffne",
         help:
           "Verfügbare Befehle:\n" +
@@ -375,9 +375,9 @@ window.PORTFOLIO = {
       },
       files: {
         "about.js":
-          "/**\n * about.js — Albert Luque Rivas\n * Full-Stack-Entwickler · Dolibarr-ERP-Spezialist\n */\n\n" +
+          "/**\n * about.js — Alberto Luque Rivas\n * Full-Stack-Entwickler · Dolibarr-ERP-Spezialist\n */\n\n" +
           "const albert = {\n" +
-          '  name: "Albert Luque Rivas",\n' +
+          '  name: "Alberto Luque Rivas",\n' +
           '  headline: "CTO & Mitgründer @ EasySoft Tech | ERP · SaaS · Full-Stack",\n' +
           '  company: "Easysoft Tech S.L.",\n' +
           '  location: "Córdoba, Spanien",\n' +
@@ -440,18 +440,18 @@ window.PORTFOLIO = {
           "- 📚 [wiki.easysoft.es](https://wiki.easysoft.es)\n" +
           "- 🛒 [Dolistore](https://www.dolistore.com/index.php?controller=search&search_query=easysoft&n=60)",
         "README.md":
-          "# Portfolio — Albert Luque Rivas\n\n" +
+          "# Portfolio — Alberto Luque Rivas\n\n" +
           "Portfolio mit **IDE-Oberfläche**, **KI**-Copilot und **5 Sprachen**.\n" +
           "Mit reinem HTML, CSS und JavaScript gebaut. Ohne Build.\n\n" +
           "## Nutzung\nÖffne index.html oder nutze Live Server.\n\n" +
           "## Sprachen\nKlicke auf das 🌐-Symbol (Seitenleiste) und wähle eine Sprache.\n\n" +
-          "## KI\nKlicke auf das ✦-Symbol für den Copiloten und frag über Albert.",
+          "## KI\nKlicke auf das ✦-Symbol für den Copiloten und frag über Alberto.",
         "game.js":
           "// game.js — Snake-Minispiel auf Canvas (vanilla, ohne Abhängigkeiten)\n" +
           "// Drücke Play. Steuerung: Pfeile / WASD · Wischen am Handy.",
       },
       ai: {
-        greeting: "Hallo! 👋 Ich bin Alberts Copilot. Frag mich nach seinen Skills, Projekten, Erfahrung oder Kontakt.",
+        greeting: "Hallo! 👋 Ich bin Albertos Copilot. Frag mich nach seinen Skills, Projekten, Erfahrung oder Kontakt.",
         suggestions: [
           { label: "🧩 Skills", q: "Welche Technologien kannst du?" },
           { label: "📦 Projekte", q: "Erzähl mir von deinen Projekten" },
@@ -459,7 +459,7 @@ window.PORTFOLIO = {
           { label: "✉️ Kontakt", q: "Wie kann ich dich kontaktieren?" },
         ],
         answers: {
-          about: "Albert Luque Rivas ist **CTO & Mitgründer von EasySoft Tech**. Informatiker mit Schwerpunkt **ERP, SaaS und Full-Stack-Architektur** (PHP, Dolibarr, Laravel, JavaScript).",
+          about: "Alberto Luque Rivas ist **CTO & Mitgründer von EasySoft Tech**. Informatiker mit Schwerpunkt **ERP, SaaS und Full-Stack-Architektur** (PHP, Dolibarr, Laravel, JavaScript).",
           skills: "Full-Stack: **PHP/Laravel**, **JavaScript/Node**, **MEAN**, SQL/MySQL und Python. Baut SaaS, APIs und Integrationen sowie ERPs (Dolibarr). Öffne `skills.md`.",
           projects: "**Mensaru** (WhatsApp+KI-Messaging-SaaS), **easyOCR** (OCR-SaaS in Laravel), Hunderte Dolibarr-Module und ERP-v18-Anpassungen. Siehe `projects.json`.",
           experience: "**CTO & Mitgründer von EasySoft Tech** seit 2025. Davor: 5 Jahre Full-Stack bei Cleverbyte Consulting und IT-Dozent bei MEDAC. Siehe `experience.log`.",
@@ -479,15 +479,15 @@ window.PORTFOLIO = {
         menu: { file: "File", edit: "Modifica", view: "Visualizza", go: "Vai", run: "Esegui", terminal: "Terminale", help: "Aiuto" },
         explorer: "Esplora risorse", terminalTab: "Terminale", problems: "Problemi", output: "Output",
         statusReady: "Pronto", searchPlaceholder: "Scrivi il nome di un file…",
-        aiTitle: "Ask Albert AI", aiSubtitle: "Chiedimi di Albert",
-        aiPlaceholder: "Scrivi la tua domanda…", aiThinking: "Albert AI sta scrivendo",
+        aiTitle: "Ask Alberto AI", aiSubtitle: "Chiedimi di Alberto",
+        aiPlaceholder: "Scrivi la tua domanda…", aiThinking: "Alberto AI sta scrivendo",
         langTitle: "Pacchetti lingua", langSubtitle: "Scegli la lingua dell'interfaccia",
         langActive: "Attivo", langInstall: "Attiva",
         themeTitle: "Temi colore", themeSubtitle: "Scegli il tuo tema",
-        boot: ["$ boot albert-os", "Caricamento kernel del portfolio…", "Montaggio moduli: about, projects, skills…", "Avvio del copilota Ask Albert AI…", "Pronto ✓"],
+        boot: ["$ boot albert-os", "Caricamento kernel del portfolio…", "Montaggio moduli: about, projects, skills…", "Avvio del copilota Ask Alberto AI…", "Pronto ✓"],
         bootEnter: "Clicca per entrare",
         tip: "Suggerimento: apri il terminale e scrivi help",
-        aiHint: "✦ Chiedi all'IA di Albert",
+        aiHint: "✦ Chiedi all'IA di Alberto",
         opening: "Apro",
         help:
           "Comandi disponibili:\n" +
@@ -505,9 +505,9 @@ window.PORTFOLIO = {
       },
       files: {
         "about.js":
-          "/**\n * about.js — Albert Luque Rivas\n * Sviluppatore Full-Stack · Specialista Dolibarr ERP\n */\n\n" +
+          "/**\n * about.js — Alberto Luque Rivas\n * Sviluppatore Full-Stack · Specialista Dolibarr ERP\n */\n\n" +
           "const albert = {\n" +
-          '  name: "Albert Luque Rivas",\n' +
+          '  name: "Alberto Luque Rivas",\n' +
           '  headline: "CTO & Cofondatore @ EasySoft Tech | ERP · SaaS · Full-Stack",\n' +
           '  company: "Easysoft Tech S.L.",\n' +
           '  location: "Córdoba, Spagna",\n' +
@@ -570,18 +570,18 @@ window.PORTFOLIO = {
           "- 📚 [wiki.easysoft.es](https://wiki.easysoft.es)\n" +
           "- 🛒 [Dolistore](https://www.dolistore.com/index.php?controller=search&search_query=easysoft&n=60)",
         "README.md":
-          "# Portfolio — Albert Luque Rivas\n\n" +
+          "# Portfolio — Alberto Luque Rivas\n\n" +
           "Portfolio con **interfaccia tipo IDE**, copilota **IA** e **5 lingue**.\n" +
           "Fatto con HTML, CSS e JavaScript vanilla. Senza build.\n\n" +
           "## Uso\nApri index.html o servilo con Live Server.\n\n" +
           "## Lingue\nClicca l'icona 🌐 (barra laterale) e scegli la lingua.\n\n" +
-          "## IA\nClicca l'icona ✦ per aprire il copilota e chiedere di Albert.",
+          "## IA\nClicca l'icona ✦ per aprire il copilota e chiedere di Alberto.",
         "game.js":
           "// game.js — mini-gioco Snake su canvas (vanilla, senza dipendenze)\n" +
           "// Premi Gioca. Controlli: frecce / WASD · swipe su mobile.",
       },
       ai: {
-        greeting: "Ciao! 👋 Sono il copilota di Albert. Chiedimi delle sue competenze, progetti, esperienza o come contattarlo.",
+        greeting: "Ciao! 👋 Sono il copilota di Alberto. Chiedimi delle sue competenze, progetti, esperienza o come contattarlo.",
         suggestions: [
           { label: "🧩 Competenze", q: "Che tecnologie conosci?" },
           { label: "📦 Progetti", q: "Parlami dei tuoi progetti" },
@@ -589,7 +589,7 @@ window.PORTFOLIO = {
           { label: "✉️ Contatti", q: "Come posso contattarti?" },
         ],
         answers: {
-          about: "Albert Luque Rivas è **CTO e cofondatore di EasySoft Tech**. Ingegnere informatico specializzato in **ERP, SaaS e architettura full-stack** (PHP, Dolibarr, Laravel, JavaScript).",
+          about: "Alberto Luque Rivas è **CTO e cofondatore di EasySoft Tech**. Ingegnere informatico specializzato in **ERP, SaaS e architettura full-stack** (PHP, Dolibarr, Laravel, JavaScript).",
           skills: "Full-stack: **PHP/Laravel**, **JavaScript/Node**, **MEAN**, SQL/MySQL e Python. Crea SaaS, API e integrazioni, oltre a ERP (Dolibarr). Apri `skills.md`.",
           projects: "**Mensaru** (SaaS di messaggistica WhatsApp+IA), **easyOCR** (SaaS OCR in Laravel), centinaia di moduli Dolibarr e personalizzazioni ERP v18. Vedi `projects.json`.",
           experience: "**CTO e cofondatore di EasySoft Tech** dal 2025. Prima: 5 anni full-stack in Cleverbyte Consulting e docente IT al MEDAC. Vedi `experience.log`.",
@@ -609,15 +609,15 @@ window.PORTFOLIO = {
         menu: { file: "Fichier", edit: "Édition", view: "Affichage", go: "Aller", run: "Exécuter", terminal: "Terminal", help: "Aide" },
         explorer: "Explorateur", terminalTab: "Terminal", problems: "Problèmes", output: "Sortie",
         statusReady: "Prêt", searchPlaceholder: "Tape le nom d'un fichier…",
-        aiTitle: "Ask Albert AI", aiSubtitle: "Pose-moi des questions sur Albert",
-        aiPlaceholder: "Écris ta question…", aiThinking: "Albert AI écrit",
+        aiTitle: "Ask Alberto AI", aiSubtitle: "Pose-moi des questions sur Alberto",
+        aiPlaceholder: "Écris ta question…", aiThinking: "Alberto AI écrit",
         langTitle: "Modules de langue", langSubtitle: "Choisis la langue de l'interface",
         langActive: "Actif", langInstall: "Activer",
         themeTitle: "Thèmes de couleur", themeSubtitle: "Choisis ton thème",
-        boot: ["$ boot albert-os", "Chargement du noyau du portfolio…", "Montage des modules : about, projects, skills…", "Démarrage du copilote Ask Albert AI…", "Prêt ✓"],
+        boot: ["$ boot albert-os", "Chargement du noyau du portfolio…", "Montage des modules : about, projects, skills…", "Démarrage du copilote Ask Alberto AI…", "Prêt ✓"],
         bootEnter: "Clique pour entrer",
         tip: "Astuce : ouvre le terminal et tape help",
-        aiHint: "✦ Demande à l'IA à propos d'Albert",
+        aiHint: "✦ Demande à l'IA à propos d'Alberto",
         opening: "Ouverture de",
         help:
           "Commandes disponibles :\n" +
@@ -635,9 +635,9 @@ window.PORTFOLIO = {
       },
       files: {
         "about.js":
-          "/**\n * about.js — Albert Luque Rivas\n * Développeur Full-Stack · Spécialiste Dolibarr ERP\n */\n\n" +
+          "/**\n * about.js — Alberto Luque Rivas\n * Développeur Full-Stack · Spécialiste Dolibarr ERP\n */\n\n" +
           "const albert = {\n" +
-          '  name: "Albert Luque Rivas",\n' +
+          '  name: "Alberto Luque Rivas",\n' +
           '  headline: "CTO & Cofondateur @ EasySoft Tech | ERP · SaaS · Full-Stack",\n' +
           '  company: "Easysoft Tech S.L.",\n' +
           '  location: "Córdoba, Espagne",\n' +
@@ -700,7 +700,7 @@ window.PORTFOLIO = {
           "- 📚 [wiki.easysoft.es](https://wiki.easysoft.es)\n" +
           "- 🛒 [Dolistore](https://www.dolistore.com/index.php?controller=search&search_query=easysoft&n=60)",
         "README.md":
-          "# Portfolio — Albert Luque Rivas\n\n" +
+          "# Portfolio — Alberto Luque Rivas\n\n" +
           "Portfolio avec une **interface type IDE**, un copilote **IA** et **5 langues**.\n" +
           "Fait en HTML, CSS et JavaScript vanilla. Sans build.\n\n" +
           "## Utilisation\nOuvre index.html ou sers-le avec Live Server.\n\n" +
@@ -711,7 +711,7 @@ window.PORTFOLIO = {
           "// Appuie sur Jouer. Commandes : flèches / WASD · swipe sur mobile.",
       },
       ai: {
-        greeting: "Salut ! 👋 Je suis le copilote d'Albert. Demande-moi ses compétences, projets, expérience ou comment le contacter.",
+        greeting: "Salut ! 👋 Je suis le copilote d'Alberto. Demande-moi ses compétences, projets, expérience ou comment le contacter.",
         suggestions: [
           { label: "🧩 Compétences", q: "Quelles technologies maîtrises-tu ?" },
           { label: "📦 Projets", q: "Parle-moi de tes projets" },
@@ -719,7 +719,7 @@ window.PORTFOLIO = {
           { label: "✉️ Contact", q: "Comment te contacter ?" },
         ],
         answers: {
-          about: "Albert Luque Rivas est **CTO & cofondateur d'EasySoft Tech**. Ingénieur informatique spécialisé en **ERP, SaaS et architecture full-stack** (PHP, Dolibarr, Laravel, JavaScript).",
+          about: "Alberto Luque Rivas est **CTO & cofondateur d'EasySoft Tech**. Ingénieur informatique spécialisé en **ERP, SaaS et architecture full-stack** (PHP, Dolibarr, Laravel, JavaScript).",
           skills: "Full-stack : **PHP/Laravel**, **JavaScript/Node**, **MEAN**, SQL/MySQL et Python. Il construit des SaaS, des API et intégrations, ainsi que des ERP (Dolibarr). Ouvre `skills.md`.",
           projects: "**Mensaru** (SaaS de messagerie WhatsApp+IA), **easyOCR** (SaaS OCR en Laravel), des centaines de modules Dolibarr et personnalisations ERP v18. Voir `projects.json`.",
           experience: "**CTO & cofondateur d'EasySoft Tech** depuis 2025. Avant : 5 ans full-stack chez Cleverbyte Consulting et enseignant IT au MEDAC. Voir `experience.log`.",

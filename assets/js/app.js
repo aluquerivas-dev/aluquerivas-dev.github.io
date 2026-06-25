@@ -1,5 +1,5 @@
 /* ============================================================
-   app.js — Portfolio IDE de Albert Luque Rivas
+   app.js — Portfolio IDE de Alberto Luque Rivas
    IDE vanilla + copiloto IA + i18n (ES·EN·DE·IT·FR) + temas
    ============================================================ */
 (function () {
@@ -195,10 +195,14 @@
     buildMinimap($("#editor"), content);
   }
   function renderBreadcrumb(name) {
-    $("#breadcrumb").innerHTML = '<span class="crumb">portfolio</span><span class="crumb">' + fileByName[name].icon + " " + name + "</span>";
+    const f = fileByName[name];
+    let html = '<span class="crumb">portfolio</span>';
+    if (f.folder) html += '<span class="crumb">' + f.folder + "</span>";
+    html += '<span class="crumb">' + f.icon + " " + name + "</span>";
+    $("#breadcrumb").innerHTML = html;
   }
   function welcomeScreen() {
-    return '<div class="welcome"><h1>&lt;/&gt; Albert Luque Rivas</h1>' +
+    return '<div class="welcome"><h1>&lt;/&gt; Alberto Luque Rivas</h1>' +
       '<div class="sub">Full-Stack Developer · Dolibarr ERP · PHP · JavaScript</div>' +
       '<div class="keys"><kbd>Ctrl</kbd>+<kbd>P</kbd> · ' + SPARK + ' AI · 🌐 ' + lang.toUpperCase() + "</div></div>";
   }
@@ -232,10 +236,10 @@
     $("#editor").innerHTML =
       '<div class="dash">' +
       '<section class="dash-hero"><div class="scanlines"></div>' +
-      '<div class="dash-avatar"><img src="assets/img/albert.jpg" alt="Albert Luque Rivas" onerror="this.remove()"><span class="av-mono">AL</span></div>' +
+      '<div class="dash-avatar"><img src="assets/img/albert.jpg" alt="Alberto Luque Rivas" onerror="this.remove()"><span class="av-mono">AL</span></div>' +
       '<div class="dash-hero-info">' +
       '<div class="dash-availability"><span class="dot"></span>' + esc(d.available) + "</div>" +
-      '<h1 class="dash-name glitch" data-text="Albert Luque Rivas">Albert Luque Rivas<span class="caret">▍</span></h1>' +
+      '<h1 class="dash-name glitch" data-text="Alberto Luque Rivas">Alberto Luque Rivas<span class="caret">▍</span></h1>' +
       '<div class="dash-headline">' + esc(d.headline) + "</div>" +
       '<div class="dash-meta">🏢 EasySoft Tech S.L. · 📍 Córdoba, España</div>' +
       '<div class="dash-cta"><button class="dash-btn" data-act="ai">' + SPARK + " " + esc(d.askAI) + "</button>" +
@@ -476,14 +480,14 @@
   const cmdHistory = []; let histPos = 0;
   function runCommand(line) {
     const raw = line.trim(); if (!raw) return;
-    termPrint('<span class="term-prompt">albert@portfolio</span><span class="term-path">:~$</span> ' + esc(line));
+    termPrint('<span class="term-prompt">alberto@portfolio</span><span class="term-path">:~$</span> ' + esc(line));
     cmdHistory.push(line); histPos = cmdHistory.length;
     const parts = raw.split(/\s+/), cmd = parts[0].toLowerCase(), args = parts.slice(1);
     const u = T().ui;
     if (cmd === "help") termPrint(esc(u.help));
     else if (cmd === "ls") termPrint(FILES.map((f) => f.icon + " " + f.name).join("\n"));
     else if (cmd === "clear") $("#termOutput").innerHTML = "";
-    else if (cmd === "whoami") termPrint("Albert Luque Rivas — Full-Stack Developer");
+    else if (cmd === "whoami") termPrint("Alberto Luque Rivas — Full-Stack Developer");
     else if (cmd === "date") termPrint(esc(new Date().toString()));
     else if (cmd === "social") termPrint(SOCIAL);
     else if (cmd === "open" || cmd === "cat") {
@@ -630,7 +634,7 @@
 
   /* ---------- Bienvenida terminal ---------- */
   function termWelcome() {
-    termPrint("Welcome to <b>albert@portfolio</b> 💻  ·  " + SPARK + " Ask Albert AI  ·  🌐 5 idiomas", "ok");
+    termPrint("Welcome to <b>alberto@portfolio</b> 💻  ·  " + SPARK + " Ask Alberto AI  ·  🌐 5 idiomas", "ok");
     termPrint('<span class="cmd-link" data-cmd="help">help</span> · <span class="cmd-link" data-cmd="ai">ai</span> · <span class="cmd-link" data-cmd="game">game</span>', "muted");
     $$(".cmd-link").forEach((el) => el.addEventListener("click", () => { runCommand(el.dataset.cmd); $("#termInput").focus(); }));
   }
