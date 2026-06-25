@@ -168,10 +168,10 @@ window.PORTFOLIO = {
           "- 🧹 Código limpio y buenas prácticas\n" +
           "- 🌍 Open source y la comunidad Dolibarr\n\n" +
           "## Personal\n" +
-          "- 🎮 Videojuegos y crear pequeños juegos\n" +
-          "- 🎧 Música mientras programo\n" +
-          "- ✈️ Viajar y descubrir sitios nuevos\n\n" +
-          "> (edita esta sección con tus aficiones reales)",
+          "- 🏍️ Las motos — apasionado del motociclismo\n" +
+          "- 👨‍👩‍👧 Mi familia, lo primero\n" +
+          "- 🌿 Los planes sencillos\n" +
+          "- 📚 Leer ciencia ficción",
         "contact.md":
           "# Contacto\n\n¿Tienes un proyecto en mente? Hablemos.\n\n" +
           "- 📧 [aluquerivasdev@gmail.com](mailto:aluquerivasdev@gmail.com)\n- 🏢 [desarrollo@easysoft.es](mailto:desarrollo@easysoft.es)\n" +
@@ -298,10 +298,10 @@ window.PORTFOLIO = {
           "- 🧹 Clean code and best practices\n" +
           "- 🌍 Open source and the Dolibarr community\n\n" +
           "## Personal\n" +
-          "- 🎮 Video games and building small games\n" +
-          "- 🎧 Music while coding\n" +
-          "- ✈️ Traveling and discovering new places\n\n" +
-          "> (edit this section with your real hobbies)",
+          "- 🏍️ Motorcycles — passionate rider\n" +
+          "- 👨‍👩‍👧 Family first\n" +
+          "- 🌿 Simple plans\n" +
+          "- 📚 Reading sci-fi",
         "contact.md":
           "# Contact\n\nGot a project in mind? Let's talk.\n\n" +
           "- 📧 [aluquerivasdev@gmail.com](mailto:aluquerivasdev@gmail.com)\n- 🏢 [desarrollo@easysoft.es](mailto:desarrollo@easysoft.es)\n" +
@@ -428,10 +428,10 @@ window.PORTFOLIO = {
           "- 🧹 Sauberer Code und Best Practices\n" +
           "- 🌍 Open Source und die Dolibarr-Community\n\n" +
           "## Persönlich\n" +
-          "- 🎮 Videospiele und kleine Spiele entwickeln\n" +
-          "- 🎧 Musik beim Programmieren\n" +
-          "- ✈️ Reisen und neue Orte entdecken\n\n" +
-          "> (bearbeite diesen Abschnitt mit deinen echten Hobbys)",
+          "- 🏍️ Motorräder — leidenschaftlicher Fahrer\n" +
+          "- 👨‍👩‍👧 Familie an erster Stelle\n" +
+          "- 🌿 Einfache Pläne\n" +
+          "- 📚 Science-Fiction lesen",
         "contact.md":
           "# Kontakt\n\nHast du ein Projekt im Kopf? Lass uns reden.\n\n" +
           "- 📧 [aluquerivasdev@gmail.com](mailto:aluquerivasdev@gmail.com)\n- 🏢 [desarrollo@easysoft.es](mailto:desarrollo@easysoft.es)\n" +
@@ -558,10 +558,10 @@ window.PORTFOLIO = {
           "- 🧹 Codice pulito e buone pratiche\n" +
           "- 🌍 Open source e la community Dolibarr\n\n" +
           "## Personale\n" +
-          "- 🎮 Videogiochi e creare piccoli giochi\n" +
-          "- 🎧 Musica mentre programmo\n" +
-          "- ✈️ Viaggiare e scoprire posti nuovi\n\n" +
-          "> (modifica questa sezione con i tuoi hobby reali)",
+          "- 🏍️ Le moto — appassionato di motociclismo\n" +
+          "- 👨‍👩‍👧 La famiglia prima di tutto\n" +
+          "- 🌿 I piani semplici\n" +
+          "- 📚 Leggere fantascienza",
         "contact.md":
           "# Contatti\n\nHai un progetto in mente? Parliamone.\n\n" +
           "- 📧 [aluquerivasdev@gmail.com](mailto:aluquerivasdev@gmail.com)\n- 🏢 [desarrollo@easysoft.es](mailto:desarrollo@easysoft.es)\n" +
@@ -688,10 +688,10 @@ window.PORTFOLIO = {
           "- 🧹 Code propre et bonnes pratiques\n" +
           "- 🌍 Open source et la communauté Dolibarr\n\n" +
           "## Personnel\n" +
-          "- 🎮 Jeux vidéo et création de petits jeux\n" +
-          "- 🎧 Musique en codant\n" +
-          "- ✈️ Voyager et découvrir de nouveaux endroits\n\n" +
-          "> (modifie cette section avec tes vrais loisirs)",
+          "- 🏍️ Les motos — passionné de moto\n" +
+          "- 👨‍👩‍👧 La famille avant tout\n" +
+          "- 🌿 Les plans simples\n" +
+          "- 📚 Lire de la science-fiction",
         "contact.md":
           "# Contact\n\nUn projet en tête ? Parlons-en.\n\n" +
           "- 📧 [aluquerivasdev@gmail.com](mailto:aluquerivasdev@gmail.com)\n- 🏢 [desarrollo@easysoft.es](mailto:desarrollo@easysoft.es)\n" +
