@@ -47,6 +47,7 @@
   const T = () => P.i18n[lang];
 
   let openTabs = [], active = null;
+  const collapsedFolders = new Set();
 
   const cssVar = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim() || "#00f0ff";
   let minimapRO = null;
@@ -135,13 +136,28 @@
   /* ---------- Sidebar ---------- */
   function renderTree() {
     const tree = $("#tree"); tree.innerHTML = "";
-    FILES.forEach((f) => {
+    const fileLi = (f, pad) => {
       const li = document.createElement("li");
       li.className = "tree-item" + (f.name === active ? " active" : "");
       li.dataset.file = f.name;
+      li.style.paddingLeft = pad + "px";
       li.innerHTML = '<span class="ic">' + f.icon + "</span>" + f.name;
       li.addEventListener("click", () => openFile(f.name));
       tree.appendChild(li);
+    };
+    // Archivos en la raíz (sin carpeta)
+    FILES.filter((f) => !f.folder).forEach((f) => fileLi(f, 16));
+    // Subcarpetas plegables
+    const folders = [];
+    FILES.forEach((f) => { if (f.folder && folders.indexOf(f.folder) === -1) folders.push(f.folder); });
+    folders.forEach((folder) => {
+      const collapsed = collapsedFolders.has(folder);
+      const fl = document.createElement("li");
+      fl.className = "tree-subfolder";
+      fl.innerHTML = '<span class="tree-chevron">' + (collapsed ? "›" : "⌄") + '</span><span class="ic">' + (collapsed ? "📁" : "📂") + "</span>" + folder;
+      fl.addEventListener("click", () => { collapsed ? collapsedFolders.delete(folder) : collapsedFolders.add(folder); renderTree(); });
+      tree.appendChild(fl);
+      if (!collapsed) FILES.filter((f) => f.folder === folder).forEach((f) => fileLi(f, 34));
     });
   }
 
@@ -636,6 +652,72 @@
     boot.addEventListener("click", close);
   }
 
+  /* ---------- Feeds técnicos en vivo (PROBLEMS / OUTPUT) ---------- */
+  function feedRand(a, b) { return a + Math.floor(Math.random() * (b - a + 1)); }
+  function feedPick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+  const FEED_FILES = ["Hero.tsx", "app.js", "data.js", "api/projects.php", "Dashboard.vue", "auth.service.ts", "webhook.php", "Invoice.php", "mensaru/Bot.php"];
+  const OUTPUT_POOL = [
+    () => '<span class="f-tag">[vite]</span> hmr update <span class="f-dim">/src/' + feedPick(FEED_FILES) + "</span>",
+    () => '<span class="f-tag">[server]</span> <span class="f-ok">GET</span> /api/projects <span class="f-ok">200</span> <span class="f-dim">' + feedRand(4, 40) + "ms</span>",
+    () => '<span class="f-tag">[server]</span> <span class="f-info">POST</span> /api/contact <span class="f-ok">200</span> <span class="f-dim">' + feedRand(8, 60) + "ms</span>",
+    () => '<span class="f-tag">[build]</span> compiled <span class="f-ok">successfully</span> in <span class="f-dim">' + feedRand(120, 900) + "ms</span>",
+    () => '<span class="f-tag">[docker]</span> albert-portfolio: <span class="f-ok">healthy</span>',
+    () => '<span class="f-tag">[db]</span> query ok <span class="f-dim">(' + feedRand(1, 25) + "ms · " + feedRand(1, 120) + " rows)</span>",
+    () => '<span class="f-tag">[ws]</span> client connected <span class="f-dim">(' + feedRand(1, 9) + " online)</span>",
+    () => '<span class="f-ok">✓</span> ' + feedRand(40, 260) + ' tests passed <span class="f-dim">(' + feedRand(300, 1400) + "ms)</span>",
+    () => '<span class="f-tag">[deploy]</span> pushing to production… <span class="f-ok">done</span>',
+    () => '<span class="f-tag">[cache]</span> <span class="f-ok">HIT</span> <span class="f-dim">/assets/' + feedPick(FEED_FILES) + "</span>",
+    () => '<span class="f-tag">[git]</span> fetch origin · <span class="f-ok">up to date</span>',
+    () => '<span class="f-tag">[api]</span> Mensaru webhook delivered <span class="f-ok">✓</span>',
+  ];
+  const PROBLEMS_POOL = [
+    () => '<span class="f-ok">✓</span> TypeScript: no errors <span class="f-dim">(' + feedRand(800, 2400) + " files)</span>",
+    () => '<span class="f-ok">✓</span> ESLint: <span class="f-ok">0 problems</span>',
+    () => '<span class="f-info">ℹ</span> Indexing workspace… <span class="f-dim">' + feedRand(2000, 9000) + " symbols</span>",
+    () => '<span class="f-ok">✓</span> Security audit: <span class="f-ok">0 vulnerabilities</span>',
+    () => '<span class="f-info">ℹ</span> Analyzing dependencies… <span class="f-ok">ok</span>',
+    () => '<span class="f-warn">⚠</span> Hint: coffee level low <span class="f-dim">☕</span>',
+    () => '<span class="f-ok">✓</span> No circular dependencies',
+    () => '<span class="f-info">ℹ</span> Type-checking ' + feedRand(50, 400) + " modules…",
+    () => '<span class="f-ok">✓</span> a11y check passed',
+    () => '<span class="f-warn">⚠</span> TODO: take over the world <span class="f-dim">(low priority)</span>',
+    () => '<span class="f-ok">✓</span> Build cache valid',
+    () => '<span class="f-info">ℹ</span> Optimizing bundle… <span class="f-dim">-' + feedRand(8, 40) + "%</span>",
+  ];
+  function startFeed(el, pool, interval) {
+    if (!el) return;
+    function tick() {
+      const div = document.createElement("div");
+      div.className = "feed-line";
+      div.innerHTML = feedPick(pool)();
+      el.appendChild(div);
+      while (el.children.length > 60) el.removeChild(el.firstChild);
+      if (!el.hidden) el.scrollTop = el.scrollHeight;
+    }
+    for (let i = 0; i < 6; i++) tick();
+    setInterval(tick, interval);
+  }
+  function wirePanelTabs() {
+    const map = [
+      { tab: "#panelTermLabel", view: "#terminal" },
+      { tab: "#panelProbLabel", view: "#problems" },
+      { tab: "#panelOutLabel", view: "#output" },
+    ];
+    map.forEach((pm) => {
+      const t = $(pm.tab); if (!t) return;
+      t.style.cursor = "pointer";
+      t.addEventListener("click", () => {
+        map.forEach((x) => {
+          $(x.tab).classList.toggle("active", x === pm);
+          const v = $(x.view); if (v) v.hidden = x !== pm;
+        });
+        const v = $(pm.view);
+        if (v) v.scrollTop = v.scrollHeight;
+        if (pm.view === "#terminal") $("#termInput").focus();
+      });
+    });
+  }
+
   /* ---------- Init ---------- */
   document.documentElement.setAttribute("data-theme", theme);
   applyI18n();
@@ -647,6 +729,9 @@
   openFile("welcome");
   termWelcome();
   renderSuggestions();
+  wirePanelTabs();
+  startFeed($("#output"), OUTPUT_POOL, 1300);
+  startFeed($("#problems"), PROBLEMS_POOL, 1700);
   tick(); setInterval(tick, 15000);
   runBoot();
 })();

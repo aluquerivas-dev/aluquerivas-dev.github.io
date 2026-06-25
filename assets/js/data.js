@@ -22,14 +22,14 @@ window.PORTFOLIO = {
 
   filesMeta: [
     { name: "welcome", icon: "🏠", lang: "home", home: true },
-    { name: "about.js", icon: "👤", lang: "js" },
-    { name: "projects.json", icon: "📦", lang: "json" },
-    { name: "skills.md", icon: "🧩", lang: "md" },
-    { name: "experience.log", icon: "📈", lang: "log" },
-    { name: "interests.md", icon: "🎯", lang: "md" },
-    { name: "contact.md", icon: "✉️", lang: "md" },
-    { name: "README.md", icon: "📖", lang: "md" },
-    { name: "game.js", icon: "🎮", lang: "js", game: true },
+    { name: "about.js", icon: "👤", lang: "js", folder: "src" },
+    { name: "skills.md", icon: "🧩", lang: "md", folder: "src" },
+    { name: "experience.log", icon: "📈", lang: "log", folder: "src" },
+    { name: "interests.md", icon: "🎯", lang: "md", folder: "src" },
+    { name: "projects.json", icon: "📦", lang: "json", folder: "projects" },
+    { name: "game.js", icon: "🎮", lang: "js", game: true, folder: "projects" },
+    { name: "contact.md", icon: "✉️", lang: "md", folder: "docs" },
+    { name: "README.md", icon: "📖", lang: "md", folder: "docs" },
   ],
 
   // Intenciones del copiloto: si alguna keyword aparece en la pregunta → esa respuesta

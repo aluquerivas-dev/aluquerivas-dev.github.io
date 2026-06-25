@@ -149,6 +149,10 @@ body {
 .tree-chevron { font-size: 12px; }
 .tree { list-style: none; flex: 1; overflow-y: auto; }
 .tree.collapsed { display: none; }
+.tree-subfolder { display: flex; align-items: center; gap: 6px; padding: 3px 10px 3px 14px; font-size: var(--fz); cursor: pointer; color: var(--sidebar-fg); white-space: nowrap; }
+.tree-subfolder:hover { background: var(--hover); }
+.tree-subfolder .tree-chevron { font-size: 11px; color: var(--gutter-fg); width: 10px; text-align: center; }
+.tree-subfolder .ic { font-size: 14px; }
 .tree-item {
   display: flex; align-items: center; gap: 8px; padding: 3px 10px 3px 26px;
   font-size: var(--fz); cursor: pointer; color: var(--sidebar-fg); white-space: nowrap;
@@ -248,6 +252,15 @@ body {
 .panel-btn:hover { background: var(--hover); color: var(--editor-fg); }
 
 .terminal { flex: 1; overflow-y: auto; padding: 8px 14px; font-family: var(--font-mono); font-size: 13px; line-height: 1.5; cursor: text; }
+.panel-feed { flex: 1; overflow-y: auto; padding: 8px 14px; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.55; color: var(--editor-fg); }
+.panel-feed[hidden] { display: none; }
+.panel.collapsed .panel-feed { display: none; }
+.feed-line { white-space: pre-wrap; word-break: break-word; }
+.f-tag { color: var(--link); }
+.f-ok { color: #23d18b; }
+.f-warn { color: var(--accent); }
+.f-info { color: var(--link); }
+.f-dim { color: var(--gutter-fg); }
 .term-output { white-space: pre-wrap; word-break: break-word; }
 .term-line { white-space: pre-wrap; }
 .term-line.err { color: var(--tok-error); }
